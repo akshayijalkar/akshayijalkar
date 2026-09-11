@@ -22,3 +22,8 @@
                       │
                       ▼
                  User Results
+
+
+There are several research areas underneath it:
+
+Computer Networks → Distributed Systems → P2P Networking → Information Retrieval → Edge Computing → Privacy/Security → Offline-first systems
