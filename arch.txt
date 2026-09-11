@@ -1,0 +1,24 @@
+                  NO INTERNET
+                      ✕
+                      |
+        ┌─────────────┴─────────────┐
+        │   Local / P2P Network     │
+        └─────────────┬─────────────┘
+                      │
+       ┌──────────────┼──────────────┐
+       │              │              │
+    Device A       Device B       Device C
+    cached info    bookmarks      cached info
+    documents      history        documents
+       │              │              │
+       └──────────────┼──────────────┘
+                      │
+                Search Request
+                      │
+                      ▼
+              Local Search Engine
+                      │
+              rank / deduplicate
+                      │
+                      ▼
+                 User Results
