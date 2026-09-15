@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +9,11 @@
   <title>Akshay R. Ijalkar | Research Profile</title>
 
   <style>
+
+    /* =========================
+       GENERAL PAGE
+    ========================== */
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -16,16 +22,15 @@
       line-height: 1.7;
     }
 
+    /* =========================
+       HEADER
+    ========================== */
+
     header {
       background: #111827;
       color: white;
       padding: 50px 20px;
       text-align: center;
-    }
-    
-    header h1 a {
-    color: inherit;
-    text-decoration: none;
     }
 
     header h1 {
@@ -33,11 +38,24 @@
       font-size: 40px;
     }
 
-    header h1 a:hover {
-    opacity: 0.7;
-    cursor: pointer;
+    header h1 a {
+      color: inherit;
+      text-decoration: none;
     }
-    
+
+    header h1 a:hover {
+      opacity: 0.7;
+    }
+
+    .tagline {
+      color: #d1d5db;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
     nav {
       margin-top: 25px;
     }
@@ -51,6 +69,10 @@
     nav a:hover {
       text-decoration: underline;
     }
+
+    /* =========================
+       MAIN CONTENT
+    ========================== */
 
     main {
       max-width: 900px;
@@ -70,9 +92,84 @@
       padding-bottom: 8px;
     }
 
-    a {
-      color: #2563eb;
+    /* Wikipedia-style links */
+
+    main a {
+      color: #3366cc;
+      text-decoration: none;
     }
+
+    main a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       INTEREST GRID
+    ========================== */
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .interest-item {
+      background: #f3f4f6;
+      padding: 14px;
+      border-radius: 6px;
+    }
+
+    /* =========================
+       QUESTIONS
+    ========================== */
+
+    .question {
+      padding: 15px;
+      margin: 12px 0;
+      background: #f9fafb;
+      border-left: 4px solid #111827;
+    }
+
+    /* =========================
+       TOOLKIT
+    ========================== */
+
+    .toolkit-row {
+      margin-bottom: 12px;
+    }
+
+    .toolkit-row strong {
+      display: inline-block;
+      width: 140px;
+    }
+
+    /* =========================
+       EXPLORE LINKS
+    ========================== */
+
+    .explore {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .explore a {
+      background: #111827;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .explore a:hover {
+      opacity: 0.85;
+      text-decoration: none;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
       text-align: center;
@@ -80,181 +177,700 @@
       background: #111827;
       color: white;
     }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+      }
+
+      .interest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .toolkit-row strong {
+        display: block;
+        width: auto;
+      }
+
+    }
+
   </style>
 
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     HEADER
+========================== -->
+
 <header>
-  <h1><a href="about.html">Akshay R Ijalkar</a></h1>
-  <p>M.Tech Computer Science | Cloud Technology & Information Security</p>
+
+  <h1>
+    <a href="web_deployment/about.html">
+      Akshay R. Ijalkar
+    </a>
+  </h1>
+
+  <p class="tagline">
+    Computer Science • Networks • Distributed Systems • Security
+  </p>
 
   <nav>
     <a href="web_deployment/about.html">About</a>
+    <a href="web_deployment/academic.html">Academic</a>
     <a href="web_deployment/research.html">Research</a>
     <a href="web_deployment/projects.html">Projects</a>
     <a href="web_deployment/publications.html">Publications</a>
     <a href="web_deployment/contact.html">Contact</a>
   </nav>
+
 </header>
+
 
 <main>
 
-  <section id="Profile">
-      <h2>Research & Academic Profile</h2>
-        <p>
-          Welcome to my
-          <a href="web_deployment/academic.html">academic</a>
-          and research portfolio. I am transitioning into
-        
-          <span title="An academic and engineering discipline concerned with computation, algorithms, programming languages, software, computer architecture, artificial intelligence, data, networks, and computational systems.">
-            Computer Science
-          </span>
-        
-          with a focus on
-        
-          <span title="The study and design of interconnected computing devices that communicate and exchange data through wired or wireless communication protocols.">
-            computer networks
-          </span>,
-        
-          <span title="Computing systems in which multiple independent computers or nodes communicate and coordinate with one another to perform tasks, share resources, or provide services as a unified system.">
-            distributed systems
-          </span>,
-        
-          <span title="The practice of protecting computer systems, networks, applications, and information from unauthorized access, attacks, damage, manipulation, and disruption.">
-            cybersecurity
-          </span>,
-        
-          <span title="Technologies that provide computing resources such as servers, storage, databases, networking, and software services over networks using scalable and on-demand infrastructure.">
-            cloud technologies
-          </span>,
-        
-          and
-        
-          <span title="Information systems designed to operate without depending entirely on a single central server or authority, allowing multiple participating devices or nodes to store, exchange, process, or retrieve information collaboratively.">
-            decentralized information systems
-          </span>.
-        </p>
-        
-        <p>
-          My long-term goal is to pursue research in Computer Science, particularly
-          in developing
 
-  <span title="Computer systems designed to protect information and services against unauthorized access, manipulation, attacks, and other security threats.">
-    secure systems
-  </span>
+<!-- =========================
+     INTRODUCTION
+========================== -->
 
-  and
+<section id="profile">
 
-  <span title="Systems designed to continue operating reliably despite failures, disruptions, unavailable network connections, changing conditions, or the loss of individual components.">
-    resilient systems
-  </span>
+  <h2>Research & Academic Profile</h2>
 
-  that enable
+  <p>
+    Welcome to my academic and research portfolio. I am transitioning
+    into
 
-  <span title="The ability to discover, retrieve, obtain, and use relevant information from available information sources.">
-    information access
-  </span>
+    <a href="https://en.wikipedia.org/wiki/Computer_science"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Computer Science studies computation, information, algorithms, software, and computational systems.">
+       Computer Science
+    </a>
 
-  and communication even in environments with limited or no
+    with interests spanning
 
-  <span title="A global interconnected network of computer networks that enables devices throughout the world to communicate and exchange information using standardized networking protocols.">
-    Internet
-  </span>
+    <a href="https://en.wikipedia.org/wiki/Computer_network"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Computer networks allow computing devices to communicate and exchange information.">
+       computer networks
+    </a>,
 
-  connectivity.
-</p>
+    <a href="https://en.wikipedia.org/wiki/Distributed_computing"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Distributed systems consist of multiple computing components that communicate and coordinate over a network.">
+       distributed systems
+    </a>,
 
-<p>
-  This portfolio documents my academic journey, research interests, projects,
-  publications, and ongoing technical work.
-</p>
-  </section>
+    <a href="https://en.wikipedia.org/wiki/Computer_security"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Computer security concerns protecting computer systems and information from unauthorized access, disruption, and modification.">
+       cybersecurity
+    </a>,
+
+    <a href="https://en.wikipedia.org/wiki/Cloud_computing"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Cloud computing provides computing resources such as processing, storage, and applications through network-accessible infrastructure.">
+       cloud computing
+    </a>
+
+    and decentralized computing.
+  </p>
 
 
-  <section id="research">
-    <h2>Research Interests</h2>
-
-    <ul>
-      <li>Computer Networks</li>
-      <li>Local Area Networking</li>
-      <li>Distributed Systems</li>
-      <li>Offline Information Retrieval</li>
-      <li>Privacy-Preserving Search</li>
-      <li>Cybersecurity</li>
-    </ul>
-
-    <h3>Current Research Idea</h3>
-
-    <p>
-      I am exploring a local-area information discovery system that can
-      retrieve useful information from nearby participating devices without
-      relying entirely on Internet connectivity.
-    </p>
-
-    <p>
-      The system would allow devices in a local network to share selected,
-      privacy-controlled information such as cached resources, bookmarks,
-      documents, or indexed knowledge.
-    </p>
-  </section>
+  <p>
+    I am particularly interested in understanding how computing systems
+    can continue providing useful communication and information services
+    when conventional Internet infrastructure is limited, unreliable,
+    unavailable, or undesirable.
+  </p>
 
 
-  <section id="projects">
-    <h2>Projects</h2>
+  <p>
+    This portfolio documents my academic development, technical
+    exploration, research interests, projects, experiments and future
+    scholarly work.
+  </p>
 
-    <h3>Local Area Collaborative Search</h3>
-
-    <p>
-      Research prototype for peer-to-peer information discovery using
-      devices connected through a local network.
-    </p>
-
-    <p>
-      <strong>Status:</strong>
-      Early research and prototype development.
-    </p>
-  </section>
+</section>
 
 
-  <section id="publications">
-    <h2>Publications & Research</h2>
 
-    <p>
-      Research papers, preprints, technical reports, and posters will
-      be listed here as the work progresses.
-    </p>
-  </section>
+<!-- =========================
+     AREAS OF INTEREST
+========================== -->
 
+<section id="interests">
 
-  <section>
-    <h2>Education</h2>
+  <h2>Areas of Interest</h2>
 
-    <h3>M.Tech Computer Science</h3>
-    <p>Cloud Technology & Information Security</p>
-
-    <h3>B.Tech Mechanical Engineering</h3>
-  </section>
+  <div class="interest-grid">
 
 
-  <section id="contact">
-    <h2>Research/Academic Links</h2>
+    <div class="interest-item">
 
-    <ul>
-      <li>
-    <a href="https://scholar.google.com/citations?hl=en&user=Q9m4CH0AAAAJ" target="_blank">Google Scholar</a> |
-    <a href="https://orcid.org/0009-0005-6980-1310" target="_blank">ORCID</a> |
-    <a href="https://github.com/akshayijalkar/" target="_blank">GitHub</a>
-      </li>
-  </section>
+      <a href="https://en.wikipedia.org/wiki/Computer_network"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="The study of interconnected computing devices and the protocols through which they communicate.">
+
+        Computer Networks
+
+      </a>
+
+    </div>
+
+
+    <div class="interest-item">
+
+      <a href="https://en.wikipedia.org/wiki/Distributed_computing"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="Computing in which multiple independent machines coordinate their activities through communication.">
+
+        Distributed Systems
+
+      </a>
+
+    </div>
+
+
+    <div class="interest-item">
+
+      <a href="https://en.wikipedia.org/wiki/Peer-to-peer"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="A distributed architecture in which participating computers can provide and consume resources directly without relying entirely on a central server.">
+
+        Peer-to-Peer Networking
+
+      </a>
+
+    </div>
+
+
+    <div class="interest-item">
+
+      <a href="https://en.wikipedia.org/wiki/Computer_security"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="The protection of computer systems, networks, applications, and information from threats and unauthorized activity.">
+
+        Cybersecurity
+
+      </a>
+
+    </div>
+
+
+    <div class="interest-item">
+
+      <a href="https://en.wikipedia.org/wiki/Information_retrieval"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="The process and study of finding information relevant to a user's information need from collections of information resources.">
+
+        Information Retrieval
+
+      </a>
+
+    </div>
+
+
+    <div class="interest-item">
+
+      <a href="https://en.wikipedia.org/wiki/Edge_computing"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="A distributed computing approach that moves computation and storage closer to users and data sources.">
+
+        Edge Computing
+
+      </a>
+
+    </div>
+
+
+    <div class="interest-item">
+
+      <a href="https://en.wikipedia.org/wiki/Cloud_computing"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="The delivery and use of computing resources through network-accessible infrastructure.">
+
+        Cloud Computing
+
+      </a>
+
+    </div>
+
+
+    <div class="interest-item">
+
+      <a href="https://en.wikipedia.org/wiki/Decentralized_computing"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="Computing architectures in which responsibilities and resources are distributed rather than controlled entirely by a single central component.">
+
+        Decentralized Systems
+
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CURRENTLY EXPLORING
+========================== -->
+
+<section id="exploring">
+
+  <h2>Currently Exploring</h2>
+
+  <p>
+    My current technical exploration focuses on concepts that connect
+    networking, distributed computing, information discovery and
+    security.
+  </p>
+
+  <ul>
+
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Peer-to-peer"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="Peer-to-peer systems allow participating devices to act as both consumers and providers of resources.">
+
+        Peer-to-Peer Networking
+
+      </a>
+    </li>
+
+
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Information_retrieval"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="Information retrieval studies methods for finding information relevant to a query or information need.">
+
+        Distributed Information Retrieval
+
+      </a>
+    </li>
+
+
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Edge_computing"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="Edge computing places computation closer to the devices and users generating or consuming information.">
+
+        Edge Computing
+
+      </a>
+    </li>
+
+
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Privacy-enhancing_technologies"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="Privacy-enhancing technologies are designed to protect personal information while allowing useful computation or communication.">
+
+        Privacy-Preserving Systems
+
+      </a>
+    </li>
+
+
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Decentralized_computing"
+         target="_blank"
+         rel="noopener noreferrer"
+         title="Decentralized architectures distribute responsibilities across multiple participating components.">
+
+        Decentralized Architectures
+
+      </a>
+    </li>
+
+  </ul>
+
+</section>
+
+
+
+<!-- =========================
+     RESEARCH QUESTIONS
+========================== -->
+
+<section id="questions">
+
+  <h2>Questions That Interest Me</h2>
+
+  <div class="question">
+
+    How can useful information remain accessible when
+
+    <a href="https://en.wikipedia.org/wiki/Internet"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="The Internet is the global system of interconnected computer networks that communicate using the Internet protocol suite.">
+
+       Internet
+
+    </a>
+
+    connectivity is unavailable or unreliable?
+
+  </div>
+
+
+  <div class="question">
+
+    How can nearby devices collaborate through
+
+    <a href="https://en.wikipedia.org/wiki/Computer_network"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="A computer network enables interconnected devices to communicate and exchange resources.">
+
+       computer networks
+
+    </a>
+
+    while preserving user privacy?
+
+  </div>
+
+
+  <div class="question">
+
+    Can
+
+    <a href="https://en.wikipedia.org/wiki/Peer-to-peer"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Peer-to-peer architectures distribute resource-sharing responsibilities among participating devices.">
+
+       peer-to-peer systems
+
+    </a>
+
+    enable useful information discovery without depending entirely
+    on centralized infrastructure?
+
+  </div>
+
+
+  <div class="question">
+
+    How can
+
+    <a href="https://en.wikipedia.org/wiki/Information_retrieval"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Information retrieval studies techniques for identifying information relevant to a query or information need.">
+
+       information retrieval
+
+    </a>
+
+    operate effectively across distributed and intermittently
+    connected devices?
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     TECHNICAL TOOLKIT
+========================== -->
+
+<section id="toolkit">
+
+  <h2>Technical Toolkit</h2>
+
+  <p>
+    Technologies and computing environments I am currently learning,
+    practicing, or using in technical projects.
+  </p>
+
+
+  <div class="toolkit-row">
+
+    <strong>Programming:</strong>
+
+    <a href="https://en.wikipedia.org/wiki/Python_(programming_language)"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Python is a general-purpose high-level programming language.">
+       Python
+    </a>
+
+    •
+
+    <a href="https://en.wikipedia.org/wiki/Java_(programming_language)"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Java is a general-purpose object-oriented programming language and software platform.">
+       Java
+    </a>
+
+    •
+
+    <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="C# is a general-purpose programming language developed for the .NET ecosystem.">
+       C#
+    </a>
+
+    •
+
+    <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Bash is a Unix shell and command language commonly used for command-line interaction and automation.">
+       Bash
+    </a>
+
+  </div>
+
+
+  <div class="toolkit-row">
+
+    <strong>Systems:</strong>
+
+    <a href="https://en.wikipedia.org/wiki/Linux"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Linux is a family of Unix-like operating systems based on the Linux kernel.">
+       Linux
+    </a>
+
+    •
+
+    <a href="https://en.wikipedia.org/wiki/Microsoft_Windows"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Microsoft Windows is a family of graphical operating systems developed by Microsoft.">
+       Windows
+    </a>
+
+  </div>
+
+
+  <div class="toolkit-row">
+
+    <strong>Infrastructure:</strong>
+
+    <a href="https://en.wikipedia.org/wiki/Docker_(software)"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Docker provides tools for packaging and running software using operating-system-level containers.">
+       Docker
+    </a>
+
+    •
+
+    <a href="https://en.wikipedia.org/wiki/Kubernetes"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Kubernetes is an open-source platform for automating deployment, scaling, and management of containerized applications.">
+       Kubernetes
+    </a>
+
+    •
+
+    <a href="https://en.wikipedia.org/wiki/Git"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Git is a distributed version-control system used to track changes to source code and other files.">
+       Git
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     RECENT ACTIVITY
+========================== -->
+
+<section id="activity">
+
+  <h2>Recent Activity</h2>
+
+  <p>
+    <strong>2026</strong>
+  </p>
+
+  <ul>
+    <li>Building and maintaining this academic and research portfolio.</li>
+
+    <li>
+      Strengthening foundations in Computer Science and preparing for
+      advanced study.
+    </li>
+
+    <li>
+      Studying computer networking, distributed computing and
+      information security.
+    </li>
+
+    <li>
+      Exploring research questions involving decentralized and
+      Internet-independent information access.
+    </li>
+
+    <li>
+      Developing practical experience with Linux, programming,
+      networking and cloud technologies.
+    </li>
+  </ul>
+
+</section>
+
+
+
+<!-- =========================
+     EXPLORE PROFILE
+========================== -->
+
+<section id="explore">
+
+  <h2>Explore My Work</h2>
+
+  <p>
+    Detailed information about my academic background, research,
+    technical projects and scholarly work is available through the
+    following sections.
+  </p>
+
+  <div class="explore">
+
+    <a href="web_deployment/about.html">
+      About
+    </a>
+
+    <a href="web_deployment/academic.html">
+      Academic
+    </a>
+
+    <a href="web_deployment/research.html">
+      Research
+    </a>
+
+    <a href="web_deployment/projects.html">
+      Projects
+    </a>
+
+    <a href="web_deployment/publications.html">
+      Publications
+    </a>
+
+    <a href="web_deployment/contact.html">
+      Contact
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     RESEARCH PROFILES
+========================== -->
+
+<section id="profiles">
+
+  <h2>Research & Professional Profiles</h2>
+
+  <p>
+
+    <a href="https://scholar.google.com/citations?hl=en&user=Q9m4CH0AAAAJ"
+       target="_blank"
+       rel="noopener noreferrer">
+       Google Scholar
+    </a>
+
+    |
+
+    <a href="https://orcid.org/0009-0005-6980-1310"
+       target="_blank"
+       rel="noopener noreferrer">
+       ORCID
+    </a>
+
+    |
+
+    <a href="https://github.com/akshayijalkar/"
+       target="_blank"
+       rel="noopener noreferrer">
+       GitHub
+    </a>
+
+  </p>
+
+</section>
+
 
 </main>
 
 
+
+<!-- =========================
+     FOOTER
+========================== -->
+
 <footer>
-  <p>© 2026 Akshay R. Ijalkar</p>
+
+  <p>
+    © 2026 Akshay R. Ijalkar
+  </p>
+
 </footer>
 
+
 </body>
-</html>  
+</html>
+```
