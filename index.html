@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -211,6 +210,109 @@
         width: auto;
       }
 
+    }
+    
+        /* =========================
+       AI CHATBOT
+    ========================= */
+    
+    #chat-button {
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+    
+        background: #111827;
+        color: white;
+    
+        border: none;
+        border-radius: 25px;
+    
+        padding: 13px 20px;
+    
+        font-size: 15px;
+        cursor: pointer;
+    }
+    
+    #chat-window {
+        display: none;
+    
+        position: fixed;
+        right: 25px;
+        bottom: 85px;
+    
+        width: 350px;
+        height: 450px;
+    
+        background: white;
+    
+        border-radius: 10px;
+    
+        box-shadow:
+            0 5px 25px rgba(0,0,0,0.25);
+    
+        overflow: hidden;
+    
+        z-index: 1000;
+    }
+    
+    #chat-header {
+        background: #111827;
+        color: white;
+    
+        padding: 15px;
+    
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #chat-header button {
+        background: none;
+        border: none;
+        color: white;
+    
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    #chat-messages {
+        height: 320px;
+    
+        padding: 15px;
+    
+        overflow-y: auto;
+    
+        font-size: 14px;
+    }
+    
+    #chat-input-area {
+        display: flex;
+    
+        padding: 10px;
+    
+        border-top: 1px solid #ddd;
+    }
+    
+    #chat-input {
+        flex: 1;
+    
+        padding: 9px;
+    
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    #chat-input-area button {
+        margin-left: 7px;
+    
+        background: #111827;
+        color: white;
+    
+        border: none;
+        border-radius: 5px;
+    
+        padding: 8px 12px;
+    
+        cursor: pointer;
     }
 
   </style>
@@ -778,41 +880,11 @@
 <section id="explore">
 
   <h2>Explore My Work</h2>
-
   <p>
     Detailed information about my academic background, research,
     technical projects and scholarly work is available through the
-    following sections.
+    above different pages.
   </p>
-
-  <div class="explore">
-
-    <a href="web_deployment/about.html">
-      About
-    </a>
-
-    <a href="web_deployment/academic.html">
-      Academic
-    </a>
-
-    <a href="web_deployment/research.html">
-      Research
-    </a>
-
-    <a href="web_deployment/projects.html">
-      Projects
-    </a>
-
-    <a href="web_deployment/publications.html">
-      Publications
-    </a>
-
-    <a href="web_deployment/contact.html">
-      Contact
-    </a>
-
-  </div>
-
 </section>
 
 
@@ -855,8 +927,120 @@
 
 
 </main>
+  
+  <!-- AI Chat Button -->
+<button id="chat-button" onclick="toggleChat()">Ask AI</button>
 
+<!-- AI Chat Window -->
+<div id="chat-window">
 
+  <div id="chat-header">
+    Ask about Akshay's work
+    <button onclick="toggleChat()">×</button>
+  </div>
+
+  <div id="chat-messages">
+    <p>
+      <strong>AI:</strong>
+      Hi! Ask me about Akshay's research interests,
+      projects, academic work, or technical interests.
+    </p>
+  </div>
+
+  <div id="chat-input-area">
+    <input
+      id="chat-input"
+      type="text"
+      placeholder="Ask a question..."
+    >
+
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+</div>
+<script>
+
+  function toggleChat() {
+  
+      const chat = document.getElementById("chat-window");
+  
+      if (chat.style.display === "block") {
+          chat.style.display = "none";
+      } else {
+          chat.style.display = "block";
+      }
+  }
+  async function sendMessage() {
+    const input = document.getElementById("chat-input");
+    const messages = document.getElementById("chat-messages");
+
+    const message = input.value.trim();
+
+    if (!message) {
+        return;
+    }
+
+    // Display user's message
+    const userMessage = document.createElement("div");
+    userMessage.className = "user-message";
+    userMessage.textContent = "You: " + message;
+    messages.appendChild(userMessage);
+
+    input.value = "";
+
+    // Display temporary thinking message
+    const aiMessage = document.createElement("div");
+    aiMessage.className = "ai-message";
+    aiMessage.textContent = "AI: Thinking...";
+    messages.appendChild(aiMessage);
+
+    messages.scrollTop = messages.scrollHeight;
+
+    try {
+        const response = await fetch(
+            "https://akshay-portfolio-ai.vercel.app/api/chat",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    message: message
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(
+                data.details || data.error || "Request failed"
+            );
+        }
+
+        aiMessage.textContent = "AI: " + data.answer;
+
+    } catch (error) {
+        console.error(error);
+
+        aiMessage.textContent =
+            "AI: Sorry, I couldn't process your request.";
+    }
+
+    messages.scrollTop = messages.scrollHeight;
+    }
+  document
+    .getElementById("chat-input")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            event.preventDefault();
+            sendMessage();
+        }
+
+    });
+  
+</script>
 
 <!-- =========================
      FOOTER
@@ -870,7 +1054,5 @@
 
 </footer>
 
-
 </body>
 </html>
-```
