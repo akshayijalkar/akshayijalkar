@@ -1,10 +1,873 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <body>
 
-    
-  </body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Academic Profile | Akshay R. Ijalkar</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+    }
+
+    header h1 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .tagline {
+      color: #d1d5db;
+      margin-top: 8px;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      color: #111827;
+    }
+
+    p a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+
+    .intro {
+      color: #4b5563;
+      font-size: 17px;
+    }
+
+
+    /* =========================
+       EDUCATION
+    ========================== */
+
+    .education-item {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .education-item h3 {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    .education-meta {
+      color: #6b7280;
+      font-size: 14px;
+      margin-top: 3px;
+    }
+
+
+    /* =========================
+       ACADEMIC JOURNEY
+    ========================== */
+
+    .journey-item {
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .journey-item:last-child {
+      border-bottom: none;
+    }
+
+    .journey-item h3 {
+      margin: 0 0 5px;
+    }
+
+    .journey-item p {
+      margin: 0;
+      color: #4b5563;
+    }
+
+
+    /* =========================
+       STUDY AREAS
+    ========================== */
+
+    .study-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .study-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .study-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .study-card h3 a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .study-card h3 a:hover {
+      color: #3366cc;
+      text-decoration: underline;
+    }
+
+    .study-card p {
+      color: #4b5563;
+      margin-bottom: 0;
+    }
+
+
+    /* =========================
+       TOPICS
+    ========================== */
+
+    .topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .topic {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      padding: 6px 11px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       DIRECTION BOX
+    ========================== */
+
+    .direction-box {
+      background: #f9fafb;
+      border-left: 4px solid #111827;
+      padding: 18px;
+      margin-top: 20px;
+    }
+
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .academic-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .academic-button {
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .academic-button:hover {
+      opacity: 0.85;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 700px) {
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+      }
+
+      section {
+        padding: 22px;
+      }
+
+      .study-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .academic-links {
+        flex-direction: column;
+      }
+
+      .academic-button {
+        text-align: center;
+      }
+
+    }
+
+  </style>
 
 </head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header>
+
+  <h1>
+    <a href="../index.html">
+      Akshay R. Ijalkar
+    </a>
+  </h1>
+
+  <p class="tagline">
+    Computer Science • Networks • Distributed Systems • Security • AI
+  </p>
+
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     ACADEMIC PROFILE
+========================== -->
+
+<section id="academic-profile">
+
+  <h2>Academic Profile</h2>
+
+  <p class="intro">
+    My academic journey began in Mechanical Engineering and is now
+    developing toward Computer Science, with growing interests in
+    computer networks, distributed systems, cybersecurity,
+    artificial intelligence, information retrieval, and
+    decentralized computing.
+  </p>
+
+  <p>
+    My current objective is to strengthen both the theoretical
+    foundations and practical skills required for advanced study and
+    research in
+
+    <a href="https://en.wikipedia.org/wiki/Computer_science"
+       target="_blank"
+       rel="noopener noreferrer">
+      Computer Science
+    </a>.
+
+    Alongside structured academic preparation, I use practical
+    projects and experiments to develop a deeper understanding of
+    computing systems.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     FORMAL EDUCATION
+========================== -->
+
+<section id="education">
+
+  <h2>Formal Education</h2>
+
+
+  <div class="education-item">
+
+    <h3>
+      Bachelor of Technology (B.Tech) — Mechanical Engineering
+    </h3>
+
+    <p class="education-meta">
+      Undergraduate Engineering Degree
+    </p>
+
+    <p>
+      My undergraduate education provided a foundation in engineering
+      mathematics, analytical problem solving, technical reasoning,
+      physical systems, and structured engineering approaches.
+    </p>
+
+    <p>
+      During and following my engineering education, my interests
+      increasingly expanded toward software, computing systems,
+      programming, networking, and information technology.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     TRANSITION TO CS
+========================== -->
+
+<section id="transition">
+
+  <h2>Transition to Computer Science</h2>
+
+  <p>
+    My transition from Mechanical Engineering toward Computer Science
+    has been driven by sustained practical exploration of software,
+    operating systems, computer hardware, networking, servers,
+    automation, and programming.
+  </p>
+
+  <p>
+    This practical exposure gradually developed into a broader
+    academic interest in understanding the principles underlying
+    computation, software systems, networks, distributed computing,
+    security, and artificial intelligence.
+  </p>
+
+  <div class="direction-box">
+
+    <strong>Current academic direction:</strong>
+
+    Building a stronger Computer Science foundation while developing
+    research-oriented knowledge in networks, distributed systems,
+    cybersecurity, information retrieval, artificial intelligence,
+    cloud/edge computing, and decentralized systems.
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CURRENT STUDY
+========================== -->
+
+<section id="current-study">
+
+  <h2>Current Areas of Study</h2>
+
+  <p>
+    My current learning combines core Computer Science subjects with
+    areas related to my developing research interests.
+  </p>
+
+
+  <div class="study-grid">
+
+
+    <div class="study-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Computer_programming"
+           target="_blank"
+           rel="noopener noreferrer">
+          Programming & Problem Solving
+        </a>
+      </h3>
+
+      <p>
+        Developing programming ability, computational thinking,
+        algorithmic problem solving, scripting, and software
+        implementation.
+      </p>
+
+    </div>
+
+
+    <div class="study-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Data_structure"
+           target="_blank"
+           rel="noopener noreferrer">
+          Data Structures & Algorithms
+        </a>
+      </h3>
+
+      <p>
+        Strengthening understanding of data organization, algorithms,
+        computational efficiency, complexity, and problem-solving
+        techniques.
+      </p>
+
+    </div>
+
+
+    <div class="study-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Operating_system"
+           target="_blank"
+           rel="noopener noreferrer">
+          Operating Systems
+        </a>
+      </h3>
+
+      <p>
+        Studying processes, memory, filesystems, storage, system
+        administration, Linux environments, and the interaction
+        between software and hardware.
+      </p>
+
+    </div>
+
+
+    <div class="study-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Computer_network"
+           target="_blank"
+           rel="noopener noreferrer">
+          Computer Networks
+        </a>
+      </h3>
+
+      <p>
+        Studying network architecture, communication protocols,
+        addressing, routing, local-area networking, peer communication,
+        and network services.
+      </p>
+
+    </div>
+
+
+    <div class="study-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Distributed_computing"
+           target="_blank"
+           rel="noopener noreferrer">
+          Distributed Systems
+        </a>
+      </h3>
+
+      <p>
+        Exploring coordination, communication, resource sharing,
+        availability, and computation across multiple independent
+        computing systems.
+      </p>
+
+    </div>
+
+
+    <div class="study-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Computer_security"
+           target="_blank"
+           rel="noopener noreferrer">
+          Cybersecurity
+        </a>
+      </h3>
+
+      <p>
+        Developing foundations in system security, network security,
+        information protection, privacy, authentication, and secure
+        computing.
+      </p>
+
+    </div>
+
+
+    <div class="study-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Artificial_intelligence"
+           target="_blank"
+           rel="noopener noreferrer">
+          Artificial Intelligence
+        </a>
+      </h3>
+
+      <p>
+        Studying AI and machine learning foundations while exploring
+        intelligent applications, AI-assisted systems, agents, and
+        practical model integration.
+      </p>
+
+    </div>
+
+
+    <div class="study-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Information_retrieval"
+           target="_blank"
+           rel="noopener noreferrer">
+          Information Retrieval
+        </a>
+      </h3>
+
+      <p>
+        Exploring search, indexing, relevance, ranking, query
+        processing, and information discovery across centralized and
+        distributed information collections.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ADDITIONAL DEVELOPMENT
+========================== -->
+
+<section id="additional-development">
+
+  <h2>Additional Technical Development</h2>
+
+  <p>
+    Alongside core academic subjects, I am developing practical
+    familiarity with technologies and concepts that support modern
+    software and research computing environments.
+  </p>
+
+
+  <div class="topics">
+
+    <span class="topic">Python</span>
+    <span class="topic">Java</span>
+    <span class="topic">C#</span>
+    <span class="topic">Bash</span>
+
+    <span class="topic">Linux</span>
+    <span class="topic">Windows</span>
+
+    <span class="topic">Git</span>
+    <span class="topic">GitHub</span>
+
+    <span class="topic">Docker</span>
+    <span class="topic">Kubernetes</span>
+
+    <span class="topic">Cloud Computing</span>
+    <span class="topic">Edge Computing</span>
+
+    <span class="topic">Peer-to-Peer Systems</span>
+    <span class="topic">Decentralized Systems</span>
+
+    <span class="topic">REST APIs</span>
+    <span class="topic">Serverless Computing</span>
+
+    <span class="topic">HPC</span>
+    <span class="topic">Research Computing</span>
+
+    <span class="topic">Machine Learning</span>
+    <span class="topic">AI Agents</span>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     RESEARCH DEVELOPMENT
+========================== -->
+
+<section id="research-development">
+
+  <h2>Research Development</h2>
+
+  <p>
+    An important part of my academic development is learning how to
+    move beyond implementing existing technologies toward identifying
+    meaningful research questions and evaluating possible solutions
+    systematically.
+  </p>
+
+  <p>
+    My current research exploration focuses on decentralized
+    information retrieval over peer-to-peer environments, particularly
+    the possibility of discovering and retrieving information from
+    nearby participating devices when conventional Internet
+    infrastructure is unavailable or limited.
+  </p>
+
+  <p>
+    The work is currently in an early prototype and experimental
+    development stage.
+  </p>
+
+  <p>
+    <a href="research.html">
+      Explore my current research →
+    </a>
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     ACADEMIC PREPARATION
+========================== -->
+
+<section id="preparation">
+
+  <h2>Academic Preparation</h2>
+
+  <p>
+    I am continuing structured preparation in core Computer Science
+    subjects, including areas relevant to postgraduate study and
+    competitive examinations in Computer Science.
+  </p>
+
+
+  <div class="topics">
+
+    <span class="topic">Engineering Mathematics</span>
+    <span class="topic">Discrete Mathematics</span>
+
+    <span class="topic">Programming</span>
+    <span class="topic">Data Structures</span>
+    <span class="topic">Algorithms</span>
+
+    <span class="topic">Computer Organization</span>
+    <span class="topic">Operating Systems</span>
+
+    <span class="topic">Computer Networks</span>
+    <span class="topic">Database Systems</span>
+
+    <span class="topic">Theory of Computation</span>
+    <span class="topic">Compiler Concepts</span>
+
+    <span class="topic">Digital Logic</span>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     LONG-TERM DIRECTION
+========================== -->
+
+<section id="academic-direction">
+
+  <h2>Long-Term Academic Direction</h2>
+
+  <p>
+    My long-term objective is to pursue advanced education and research
+    in Computer Science and progressively develop the theoretical,
+    experimental, and research skills required for doctoral-level
+    work.
+  </p>
+
+  <p>
+    Areas currently of particular interest include distributed
+    computing, computer networks, cybersecurity, information retrieval,
+    decentralized systems, artificial intelligence, and the
+    intersection between these fields.
+  </p>
+
+  <p>
+    I intend to continue developing this path through structured
+    academic study, technical implementation, research prototypes,
+    controlled experiments, open-source work, scholarly writing, and
+    publication where the research results support it.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     ACADEMIC PROFILES
+========================== -->
+
+<section id="academic-profiles">
+
+  <h2>Academic & Research Profiles</h2>
+
+  <p>
+    Research outputs and continuing academic work can be followed
+    through the profiles and pages below.
+  </p>
+
+
+  <div class="academic-links">
+
+
+    <a class="academic-button"
+       href="https://scholar.google.com/citations?hl=en&user=Q9m4CH0AAAAJ"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      Google Scholar
+
+    </a>
+
+
+    <a class="academic-button"
+       href="https://orcid.org/0009-0005-6980-1310"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      ORCID
+
+    </a>
+
+
+    <a class="academic-button"
+       href="research.html">
+
+      Research
+
+    </a>
+
+
+    <a class="academic-button"
+       href="publications.html">
+
+      Publications
+
+    </a>
+
+
+    <a class="academic-button"
+       href="projects.html">
+
+      Projects
+
+    </a>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+  <p>
+    © 2026 Akshay R. Ijalkar
+  </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```
