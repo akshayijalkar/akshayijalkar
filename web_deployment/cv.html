@@ -1,162 +1,751 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curriculum Vitae | AKSHAY R IJALKAR</title>
+
+  <title>Curriculum Vitae | Akshay R. Ijalkar</title>
 
   <style>
+
+    /* =========================================
+       GENERAL
+    ========================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f3f4f6;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      line-height: 1.55;
+    }
+
+
+    /* =========================================
+       CV PAGE
+    ========================================= */
+
+    .cv-container {
+      position: relative;
       max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #222;
+      margin: 35px auto;
+      padding: 55px 65px;
+      background: white;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
 
-    h1 {
-      margin-bottom: 5px;
+
+    /* =========================================
+       HOME BUTTON
+    ========================================= */
+
+    .home-button {
+      position: absolute;
+      top: 22px;
+      right: 25px;
+
+      color: #374151;
+      text-decoration: none;
+
+      font-size: 25px;
+      line-height: 1;
     }
 
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-      margin-top: 35px;
-    }
-
-    a {
+    .home-button:hover {
       color: #0066cc;
+    }
+
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    .cv-header {
+      text-align: center;
+      padding-bottom: 22px;
+      border-bottom: 2px solid #1f2937;
+    }
+
+    .cv-header h1 {
+      margin: 0;
+      font-size: 31px;
+      letter-spacing: 1px;
+      color: #111827;
+    }
+
+    .headline {
+      margin: 7px 0 12px;
+      font-size: 15px;
+      color: #4b5563;
+    }
+
+    .contact {
+      margin: 5px 0;
+      font-size: 13.5px;
+      color: #4b5563;
+    }
+
+    .contact a {
+      color: #374151;
       text-decoration: none;
     }
 
-    .header {
-      text-align: center;
-      margin-bottom: 40px;
+    .contact a:hover {
+      text-decoration: underline;
     }
 
-    .item {
-      margin-bottom: 20px;
+    .separator {
+      color: #9ca3af;
+      margin: 0 6px;
+    }
+
+
+    /* =========================================
+       SECTIONS
+    ========================================= */
+
+    section {
+      margin-top: 28px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      padding-bottom: 5px;
+
+      border-bottom: 1px solid #9ca3af;
+
+      color: #111827;
+
+      font-size: 17px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    h3 {
+      margin: 0;
+      color: #111827;
+      font-size: 15.5px;
+    }
+
+    p {
+      margin: 7px 0;
+      font-size: 14px;
+    }
+
+
+    /* =========================================
+       ENTRIES
+    ========================================= */
+
+    .entry {
+      margin-bottom: 18px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
     }
 
     .date {
-      color: #666;
+      color: #6b7280;
+      font-size: 13.5px;
+      white-space: nowrap;
     }
+
+    .institution {
+      margin: 3px 0;
+      color: #374151;
+    }
+
+    .specialization {
+      margin: 2px 0;
+      color: #4b5563;
+      font-style: italic;
+    }
+
+
+    /* =========================================
+       LISTS
+    ========================================= */
+
+    ul {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+
+    /* =========================================
+       SKILLS
+    ========================================= */
+
+    .skill-row {
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .skill-row strong {
+      color: #111827;
+    }
+
+
+    /* =========================================
+       RESEARCH STATUS
+    ========================================= */
+
+    .status {
+      display: inline-block;
+
+      margin-top: 6px;
+      padding: 2px 7px;
+
+      border: 1px solid #d1d5db;
+      border-radius: 3px;
+
+      color: #4b5563;
+      font-size: 11px;
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    .cv-footer {
+      margin-top: 35px;
+      padding-top: 10px;
+
+      border-top: 1px solid #d1d5db;
+
+      text-align: center;
+      color: #9ca3af;
+      font-size: 11px;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 700px) {
+
+      .cv-container {
+        margin: 0;
+        padding: 45px 25px;
+        box-shadow: none;
+      }
+
+      .cv-header h1 {
+        font-size: 26px;
+      }
+
+      .entry-header {
+        display: block;
+      }
+
+      .date {
+        display: block;
+        margin-top: 3px;
+      }
+
+      .contact {
+        line-height: 1.8;
+      }
+
+    }
+
+
+    /* =========================================
+       PRINT / PDF
+    ========================================= */
+
+    @media print {
+
+      @page {
+        size: A4;
+        margin: 15mm 16mm;
+      }
+
+      body {
+        background: white;
+        color: black;
+      }
+
+      .cv-container {
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+        padding: 0;
+
+        box-shadow: none;
+      }
+
+      /* Website-only control */
+      .home-button {
+        display: none !important;
+      }
+
+      .cv-header {
+        padding-bottom: 15px;
+      }
+
+      section {
+        margin-top: 20px;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      p,
+      li,
+      .skill-row {
+        font-size: 11pt;
+      }
+
+      h3 {
+        font-size: 11.5pt;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      .entry,
+      .skill-row {
+        break-inside: avoid;
+      }
+
+      .cv-footer {
+        display: none;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <div class="header">
-    <h1>AKSHAY R IJALKAR</h1>
+<div class="cv-container">
 
-    <p>
-      Computer Science Student | Research Aspirant
+
+  <!-- Website-only home control -->
+
+  <a
+    href="../index.html"
+    class="home-button"
+    title="Home"
+    aria-label="Return to home page">
+    &#8962;
+  </a>
+
+
+
+  <!-- =====================================
+       HEADER
+  ====================================== -->
+
+  <header class="cv-header">
+
+    <h1>AKSHAY R. IJALKAR</h1>
+
+    <p class="headline">
+      Computer Science Student • Research Aspirant
     </p>
 
-    <header>
-        <nav>
-    <a href="../index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="projects.html">Projects</a>
-    <a href="publications.html">Publications</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+    <p class="contact">
+
+      <a href="mailto:ijalkar3@gmail.com">
+        ijalkar3@gmail.com
+      </a>
+
+      <span class="separator">|</span>
+
+      <a
+        href="https://github.com/akshayijalkar"
+        target="_blank"
+        rel="noopener noreferrer">
+        GitHub
+      </a>
+
+      <span class="separator">|</span>
+
+      <a
+        href="https://www.linkedin.com/in/akshay-i-3b8264187"
+        target="_blank"
+        rel="noopener noreferrer">
+        LinkedIn
+      </a>
+
+      <span class="separator">|</span>
+
+      <a
+        href="https://scholar.google.com/citations?hl=en&user=Q9m4CH0AAAAJ"
+        target="_blank"
+        rel="noopener noreferrer">
+        Google Scholar
+      </a>
+
+      <span class="separator">|</span>
+
+      <a
+        href="https://orcid.org/0009-0005-6980-1310"
+        target="_blank"
+        rel="noopener noreferrer">
+        ORCID
+      </a>
+
+    </p>
+
+  </header>
+
+
+
+  <!-- =====================================
+       RESEARCH INTERESTS
+  ====================================== -->
+
+  <section>
+
+    <h2>Research Interests</h2>
 
     <p>
-      <a href="mailto:ijalkar3@gmail.com">Email</a> |
-      <a href="https://github.com/akshayijalkar">GitHub</a> |
-      <a href="https://www.linkedin.com/in/akshay-i-3b8264187">LinkedIn</a> |
-      <a href="https://scholar.google.com/citations?hl=en&user=Q9m4CH0AAAAJ">Google Scholar</a>
+      Computer Networks • Distributed Systems • Peer-to-Peer Systems •
+      Cybersecurity & Privacy • Information Retrieval • Artificial Intelligence •
+      Machine Learning • Cloud & Edge Computing • Decentralized Systems •
+      Embedded Systems • Offline & Infrastructure-Limited Communication
     </p>
-  </div>
 
-  <h2>Research Interests</h2>
+  </section>
 
-  <p>
-    Computer Networks, Distributed Systems, Cloud Computing,
-    Cybersecurity, Machine Learning and AI Systems,
-    Embeded Systems, Offline Communication Systems
-  </p>
 
-  <h2>Education</h2>
 
-  <div class="item">
-    <strong>M.Tech in Computer Science</strong><br>
-    Cloud Technology & Information Security<br>
-    <span class="date">2026 – Present</span>
-  </div>
+  <!-- =====================================
+       EDUCATION
+  ====================================== -->
 
-  <div class="item">
-    <strong>B.Tech in Mechanical Engineering</strong><br>DBATU Lonere, Raigad, Maharashtra, INDIA
-    <br>
-  </div>
+  <section>
 
-  <h2>Research Projects</h2>
+    <h2>Education</h2>
 
-  <div class="item">
-    <strong>Offline Local Information Search Network</strong>
+
+    <div class="entry">
+
+      <div class="entry-header">
+
+        <h3>
+          Master of Technology (M.Tech) in Computer Science
+        </h3>
+
+        <span class="date">
+          2026 – Present
+        </span>
+
+      </div>
+
+      <p class="specialization">
+        Cloud Technology & Information Security
+      </p>
+
+    </div>
+
+
+    <div class="entry">
+
+      <div class="entry-header">
+
+        <h3>
+          Bachelor of Technology (B.Tech) in Mechanical Engineering
+        </h3>
+
+      </div>
+
+      <p class="institution">
+        Dr. Babasaheb Ambedkar Technological University (DBATU)<br>
+        Lonere, Raigad, Maharashtra, India
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       RESEARCH
+  ====================================== -->
+
+  <section>
+
+    <h2>Research Experience & Current Work</h2>
+
+
+    <div class="entry">
+
+      <div class="entry-header">
+
+        <h3>
+          Privacy-Preserving Decentralized Information Retrieval
+          over Opportunistic Peer-to-Peer Networks
+        </h3>
+
+      </div>
+
+      <span class="status">
+        Ongoing Research / Prototype Development
+      </span>
+
+      <p>
+        Exploring decentralized information discovery and retrieval
+        across nearby participating computing devices without complete
+        dependence on conventional Internet infrastructure or centralized
+        search services.
+      </p>
+
+      <ul>
+
+        <li>
+          Investigating local peer discovery and peer-to-peer communication.
+        </li>
+
+        <li>
+          Exploring distributed query processing and local information indexing.
+        </li>
+
+        <li>
+          Studying result aggregation and relevance-based information retrieval.
+        </li>
+
+        <li>
+          Considering privacy and security requirements for distributed
+          information exchange.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       SELECTED TECHNICAL PROJECTS
+  ====================================== -->
+
+  <section>
+
+    <h2>Selected Technical Projects</h2>
+
+
+    <div class="entry">
+
+      <h3>Academic & Research Portfolio</h3>
+
+      <p>
+        Designed and developed a personal academic portfolio for
+        documenting research interests, projects, academic development,
+        and scholarly outputs using HTML, CSS, JavaScript and GitHub Pages.
+      </p>
+
+    </div>
+
+
+    <div class="entry">
+
+      <h3>AI Portfolio Assistant</h3>
+
+      <p>
+        Developed an AI-assisted interface for answering questions about
+        research interests and technical work using JavaScript, Gemini API,
+        serverless backend functions and Vercel.
+      </p>
+
+    </div>
+
+
+    <div class="entry">
+
+      <h3>Automated Research Publication Integration</h3>
+
+      <p>
+        Implemented a serverless integration that retrieves public
+        scholarly outputs from ORCID and dynamically presents available
+        research records on the portfolio website.
+      </p>
+
+    </div>
+
+
+    <div class="entry">
+
+      <h3>Multi-Form Data Integration Automation</h3>
+
+      <p>
+        Developed an automation workflow using Google Forms,
+        Google Sheets and Apps Script to consolidate records from
+        multiple forms using a common identifier.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       TECHNICAL SKILLS
+  ====================================== -->
+
+  <section>
+
+    <h2>Technical Skills</h2>
+
+
+    <div class="skill-row">
+      <strong>Programming:</strong>
+      Python, Java, C#, Bash
+    </div>
+
+
+    <div class="skill-row">
+      <strong>Web Technologies:</strong>
+      HTML, CSS, JavaScript, REST APIs
+    </div>
+
+
+    <div class="skill-row">
+      <strong>Operating Systems:</strong>
+      Linux, Windows, WSL
+    </div>
+
+
+    <div class="skill-row">
+      <strong>DevOps & Containers:</strong>
+      Docker, Kubernetes, CI/CD, Git, GitHub
+    </div>
+
+
+    <div class="skill-row">
+      <strong>AI & Machine Learning:</strong>
+      Machine Learning Fundamentals, AI Application Development,
+      Gemini API, MLflow, Model Deployment
+    </div>
+
+
+    <div class="skill-row">
+      <strong>Monitoring:</strong>
+      Prometheus, Grafana
+    </div>
+
+
+    <div class="skill-row">
+      <strong>Systems & Infrastructure:</strong>
+      Computer Networks, Server Administration, Storage,
+      RAID, HPC & Research Computing
+    </div>
+
+
+    <div class="skill-row">
+      <strong>Automation:</strong>
+      Bash Scripting, Google Apps Script
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       RESEARCH METHODS / INTERESTS
+  ====================================== -->
+
+  <section>
+
+    <h2>Research & Technical Development</h2>
 
     <p>
-      Research concept focused on creating a local-area information
-      discovery system that allows users to search information available
-      across nearby devices without relying entirely on the internet.
+      Developing practical and theoretical foundations in distributed
+      computing, computer networking, information retrieval, cybersecurity,
+      artificial intelligence, Linux systems and research computing.
+      Current work emphasizes prototype development, experimental design,
+      system evaluation and technical documentation.
     </p>
-  </div>
 
-  <h2>Projects</h2>
+  </section>
 
-  <div class="item">
-    <strong>Project Name</strong>
+
+
+  <!-- =====================================
+       PUBLICATIONS
+  ====================================== -->
+
+  <section>
+
+    <h2>Publications & Research Outputs</h2>
+
     <p>
-      Short description of the project, technologies used and what
-      problem it solves.
+      Research work is currently under development. Scholarly outputs
+      will be listed here as they become publicly available through
+      ORCID and Google Scholar.
     </p>
+
+  </section>
+
+
+
+  <!-- =====================================
+       ACADEMIC OBJECTIVE
+  ====================================== -->
+
+  <section>
+
+    <h2>Academic Objective</h2>
+
+    <p>
+      To develop advanced research expertise in Computer Science,
+      particularly at the intersection of computer networks,
+      distributed systems, cybersecurity, information retrieval and
+      artificial intelligence, with a long-term objective of
+      contributing to doctoral-level research and practical computing
+      systems.
+    </p>
+
+  </section>
+
+
+
+  <!-- Visible only on website -->
+
+  <div class="cv-footer">
+    Online Curriculum Vitae • Akshay R. Ijalkar
   </div>
 
-  <h2>Technical Skills</h2>
 
-  <p>
-    <strong>Programming:</strong> Python, Bash
-  </p>
-
-  <p>
-    <strong>Operating Systems:</strong> Linux, Windows
-  </p>
-
-  <p>
-    <strong>DevOps:</strong> Docker, Kubernetes, CI/CD
-  </p>
-
-  <p>
-    <strong>Machine Learning:</strong>
-    ML fundamentals, MLflow, model deployment
-  </p>
-
-  <p>
-    <strong>Monitoring:</strong>
-    Prometheus, Grafana
-  </p>
-
-  <h2>Publications</h2>
-
-  <p>
-    Research publications will be listed here.
-  </p>
-
-  <h2>Certifications</h2>
-
-  <p>
-    Add your certifications here.
-  </p>
-
-  <h2>Achievements</h2>
-
-  <p>
-    Add GATE score/rank, competitions, awards or academic achievements here.
-  </p>
+</div>
 
 </body>
+
 </html>
+```
