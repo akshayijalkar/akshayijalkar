@@ -1,0 +1,36 @@
+name: Install light portfolio design
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web_deployment/portfolio-theme.css'
+      - 'web_deployment/canvas-effects.js'
+      - '.github/workflows/install-light-design.yml'
+permissions:
+  contents: write
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Attach shared design assets safely
+        shell: python
+        run: |
+          from pathlib import Path
+          pages=list(Path('web_deployment').glob('*.html'))
+          for p in pages:
+              if p.name=='cv.html': continue
+              s=p.read_text()
+              if 'portfolio-theme.css' not in s:
+                  s=s.replace('</head>','  <link rel="stylesheet" href="portfolio-theme.css">\n</head>',1)
+              if 'canvas-effects.js' not in s:
+                  s=s.replace('</body>','  <script src="canvas-effects.js" defer></script>\n</body>',1)
+              p.write_text(s)
+      - name: Commit page wiring
+        run: |
+          git config user.name "Akshay R. Ijalkar"
+          git config user.email "167232821+akshayijalkar@users.noreply.github.com"
+          git add web_deployment/*.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Wire light design and canvas effects across portfolio"
+          git push
