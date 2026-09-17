@@ -1,0 +1,88 @@
+name: Enrich portfolio hyperlinks
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/enrich-links.yml'
+permissions:
+  contents: write
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace generic wiki references and enrich informative links
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          pages=[Path('index.html'),*Path('web_deployment').glob('*.html')]
+          # Prefer authoritative documentation, educational resources, research indexes and official project sites.
+          links={
+            'Artificial Intelligence':'https://www.ibm.com/think/topics/artificial-intelligence',
+            'artificial intelligence':'https://www.ibm.com/think/topics/artificial-intelligence',
+            'Machine Learning':'https://developers.google.com/machine-learning/crash-course',
+            'machine learning':'https://developers.google.com/machine-learning/crash-course',
+            'Computer Science':'https://teachyourselfcs.com/',
+            'Computer Networks':'https://www.cloudflare.com/learning/network-layer/what-is-a-computer-network/',
+            'computer networks':'https://www.cloudflare.com/learning/network-layer/what-is-a-computer-network/',
+            'Distributed Systems':'https://pdos.csail.mit.edu/6.824/',
+            'distributed systems':'https://pdos.csail.mit.edu/6.824/',
+            'Information Retrieval':'https://nlp.stanford.edu/IR-book/',
+            'information retrieval':'https://nlp.stanford.edu/IR-book/',
+            'Cybersecurity':'https://www.nist.gov/cybersecurity',
+            'Security & Privacy':'https://www.nist.gov/cybersecurity',
+            'cloud computing':'https://www.nist.gov/publications/nist-definition-cloud-computing',
+            'Cloud Computing':'https://www.nist.gov/publications/nist-definition-cloud-computing',
+            'Edge Computing':'https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/',
+            'Python':'https://docs.python.org/3/',
+            'Linux':'https://www.kernel.org/',
+            'Docker':'https://docs.docker.com/',
+            'Kubernetes':'https://kubernetes.io/docs/home/',
+            'Git':'https://git-scm.com/doc',
+            'GitHub':'https://github.com/akshayijalkar/',
+            'HTML':'https://developer.mozilla.org/en-US/docs/Web/HTML',
+            'CSS':'https://developer.mozilla.org/en-US/docs/Web/CSS',
+            'JavaScript':'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+            'REST APIs':'https://developer.mozilla.org/en-US/docs/Glossary/REST',
+            'Vercel':'https://vercel.com/docs',
+            'GitHub Pages':'https://docs.github.com/en/pages',
+            'MLflow':'https://mlflow.org/docs/latest/',
+            'Prometheus':'https://prometheus.io/docs/introduction/overview/',
+            'Grafana':'https://grafana.com/docs/',
+            'Google Scholar':'https://scholar.google.com/citations?hl=en&user=Q9m4CH0AAAAJ',
+            'ORCID':'https://orcid.org/0009-0005-6980-1310'
+          }
+          wiki_map={
+            'https://en.wikipedia.org/wiki/Artificial_intelligence':links['Artificial Intelligence'],
+            'https://en.wikipedia.org/wiki/Machine_learning':links['Machine Learning'],
+            'https://en.wikipedia.org/wiki/Computer_science':links['Computer Science'],
+            'https://en.wikipedia.org/wiki/Computer_network':links['Computer Networks'],
+            'https://en.wikipedia.org/wiki/Distributed_computing':links['Distributed Systems'],
+            'https://en.wikipedia.org/wiki/Information_retrieval':links['Information Retrieval'],
+            'https://en.wikipedia.org/wiki/Computer_security':links['Cybersecurity'],
+            'https://en.wikipedia.org/wiki/Cloud_computing':links['Cloud Computing'],
+            'https://en.wikipedia.org/wiki/Edge_computing':links['Edge Computing'],
+            'https://en.wikipedia.org/wiki/Peer-to-peer':'https://www.britannica.com/technology/P2P'
+          }
+          def link_plain(s,label,url):
+              # Do not alter text already inside an anchor tag.
+              pat=rf'(?<![>\w])({re.escape(label)})(?![^<]*</a>)(?![\w])'
+              return re.sub(pat,lambda m:f'<a href="{url}" target="_blank" rel="noopener noreferrer">{m.group(1)}</a>',s,count=2,flags=re.I)
+          for p in pages:
+              if p.name=='cv.html': continue
+              s=p.read_text()
+              for old,new in wiki_map.items(): s=s.replace(old,new)
+              # Enrich only prose/cards; limited occurrences avoid turning the site into link soup.
+              for label,url in links.items():
+                  if f'href="{url}"' not in s:
+                      s=link_plain(s,label,url)
+              p.write_text(s)
+      - name: Commit enriched links
+        run: |
+          git config user.name "Akshay R. Ijalkar"
+          git config user.email "167232821+akshayijalkar@users.noreply.github.com"
+          git add index.html web_deployment/*.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Replace wiki links with authoritative learning resources"
+          git push
