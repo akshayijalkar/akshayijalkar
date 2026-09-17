@@ -1,17 +1,750 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <body>
-    <header>
-        <nav>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About | Akshay R. Ijalkar</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+    }
+
+    header h1 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .tagline {
+      color: #d1d5db;
+      margin-top: 8px;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      color: #111827;
+    }
+
+    p a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+
+    .intro {
+      color: #4b5563;
+      font-size: 17px;
+    }
+
+
+    /* =========================
+       FOCUS CARDS
+    ========================== */
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .focus-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .focus-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .focus-card p {
+      color: #4b5563;
+      margin-bottom: 0;
+    }
+
+
+    /* =========================
+       JOURNEY
+    ========================== */
+
+    .journey-item {
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .journey-item:last-child {
+      border-bottom: none;
+    }
+
+    .journey-item h3 {
+      margin: 0 0 5px;
+    }
+
+    .journey-item p {
+      margin: 0;
+      color: #4b5563;
+    }
+
+
+    /* =========================
+       TOOLKIT
+    ========================== */
+
+    .toolkit {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .tool {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      padding: 6px 11px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       LINKS
+    ========================== */
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .profile-button {
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .profile-button:hover {
+      opacity: 0.85;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 700px) {
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+      }
+
+      section {
+        padding: 22px;
+      }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-links {
+        flex-direction: column;
+      }
+
+      .profile-button {
+        text-align: center;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header>
+
+  <h1>
+    <a href="../index.html">
+      Akshay R. Ijalkar
+    </a>
+  </h1>
+
+  <p class="tagline">
+    Computer Science • Networks • Distributed Systems • Security • AI
+  </p>
+
+  <nav>
     <a href="../index.html">Home</a>
     <a href="research.html">Research</a>
     <a href="projects.html">Projects</a>
     <a href="publications.html">Publications</a>
     <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-  </body>
-</head>
+  </nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section id="about">
+
+  <h2>About Me</h2>
+
+  <p class="intro">
+    I am Akshay R. Ijalkar, an engineering graduate developing my
+    academic and technical foundation in Computer Science with a
+    long-term interest in advanced study, research, and the development
+    of practical computing systems.
+  </p>
+
+  <p>
+    My academic background began in Mechanical Engineering. Over time,
+    my interests increasingly moved toward computing, particularly the
+    way software, networks, operating systems, distributed
+    infrastructure, security, and intelligent systems work together.
+  </p>
+
+  <p>
+    I am currently strengthening my foundations in
+
+    <a href="https://en.wikipedia.org/wiki/Computer_science"
+       target="_blank"
+       rel="noopener noreferrer">
+      Computer Science
+    </a>
+
+    while developing practical experience through programming,
+    systems administration, networking, automation, software projects,
+    server infrastructure, and research-oriented experimentation.
+  </p>
+
+  <p>
+    Rather than treating these areas independently, I am particularly
+    interested in understanding how they interact to create useful,
+    resilient, secure, and intelligent computing systems.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     ACADEMIC JOURNEY
+========================== -->
+
+<section id="journey">
+
+  <h2>Academic & Technical Journey</h2>
+
+
+  <div class="journey-item">
+
+    <h3>Engineering Foundation</h3>
+
+    <p>
+      My formal academic background is in Mechanical Engineering,
+      which introduced me to engineering problem solving, mathematics,
+      analytical thinking, physical systems, and structured approaches
+      to technical problems.
+    </p>
+
+  </div>
+
+
+  <div class="journey-item">
+
+    <h3>Transition Toward Computing</h3>
+
+    <p>
+      My growing interest in software and computing led me to study
+      programming, Linux and Windows systems, computer hardware,
+      networking, servers, storage, automation, and software
+      development.
+    </p>
+
+  </div>
+
+
+  <div class="journey-item">
+
+    <h3>Computer Science Development</h3>
+
+    <p>
+      I am continuing to build stronger theoretical foundations in
+      Computer Science alongside practical experience, with particular
+      attention to networks, distributed systems, information security,
+      artificial intelligence, algorithms, operating systems, and
+      computing infrastructure.
+    </p>
+
+  </div>
+
+
+  <div class="journey-item">
+
+    <h3>Research Development</h3>
+
+    <p>
+      My current direction increasingly involves moving from learning
+      existing technologies toward identifying research questions,
+      developing prototypes, designing experiments, evaluating results,
+      and eventually contributing scholarly research.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CURRENT FOCUS
+========================== -->
+
+<section id="focus">
+
+  <h2>Current Focus</h2>
+
+  <div class="focus-grid">
+
+
+    <div class="focus-card">
+
+      <h3>Computer Networks</h3>
+
+      <p>
+        Understanding how computing devices discover, communicate,
+        exchange information, and provide services across networked
+        environments.
+      </p>
+
+    </div>
+
+
+    <div class="focus-card">
+
+      <h3>Distributed Systems</h3>
+
+      <p>
+        Exploring computing architectures where multiple independent
+        systems coordinate, communicate, and share information or
+        resources.
+      </p>
+
+    </div>
+
+
+    <div class="focus-card">
+
+      <h3>Security & Privacy</h3>
+
+      <p>
+        Developing an understanding of secure computing, information
+        protection, network security, and privacy-aware system design.
+      </p>
+
+    </div>
+
+
+    <div class="focus-card">
+
+      <h3>Artificial Intelligence</h3>
+
+      <p>
+        Exploring machine learning, AI applications, intelligent
+        agents, information processing, and the integration of AI with
+        practical software systems.
+      </p>
+
+    </div>
+
+
+    <div class="focus-card">
+
+      <h3>Information Retrieval</h3>
+
+      <p>
+        Investigating how relevant information can be discovered,
+        searched, ranked, and retrieved from centralized and
+        distributed information sources.
+      </p>
+
+    </div>
+
+
+    <div class="focus-card">
+
+      <h3>Research Computing</h3>
+
+      <p>
+        Exploring servers, storage, Linux environments, cloud and edge
+        infrastructure, containers, high-performance computing, and
+        systems supporting data-intensive research.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     WHAT INTERESTS ME
+========================== -->
+
+<section id="motivation">
+
+  <h2>What Interests Me</h2>
+
+  <p>
+    One question that particularly interests me is how computing
+    systems can continue providing useful communication and access to
+    information when conventional Internet infrastructure is limited,
+    unreliable, unavailable, or unsuitable for a particular
+    environment.
+  </p>
+
+  <p>
+    This has led me toward exploring peer-to-peer networking,
+    decentralized systems, distributed information retrieval, edge
+    computing, security, and privacy-preserving architectures.
+  </p>
+
+  <p>
+    I am also interested in how artificial intelligence can interact
+    with these systems — for example, by assisting information
+    discovery, ranking, routing, resource selection, automation, and
+    decision-making across distributed environments.
+  </p>
+
+  <p>
+    These interests currently form the foundation for the research
+    questions and experimental projects documented throughout this
+    portfolio.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     TECHNICAL DEVELOPMENT
+========================== -->
+
+<section id="technical">
+
+  <h2>Technical Development</h2>
+
+  <p>
+    My practical learning and project work currently involves
+    technologies and environments including:
+  </p>
+
+  <div class="toolkit">
+
+    <span class="tool">Python</span>
+    <span class="tool">Java</span>
+    <span class="tool">C#</span>
+    <span class="tool">Bash</span>
+
+    <span class="tool">Linux</span>
+    <span class="tool">Windows</span>
+    <span class="tool">WSL</span>
+
+    <span class="tool">Git</span>
+    <span class="tool">GitHub</span>
+
+    <span class="tool">Docker</span>
+    <span class="tool">Kubernetes</span>
+
+    <span class="tool">HTML</span>
+    <span class="tool">CSS</span>
+    <span class="tool">JavaScript</span>
+
+    <span class="tool">REST APIs</span>
+    <span class="tool">Vercel</span>
+    <span class="tool">GitHub Pages</span>
+
+    <span class="tool">Computer Networks</span>
+    <span class="tool">Server Infrastructure</span>
+    <span class="tool">Storage & RAID</span>
+
+    <span class="tool">AI / ML</span>
+    <span class="tool">Gemini API</span>
+
+    <span class="tool">HPC</span>
+    <span class="tool">Automation</span>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     RESEARCH DIRECTION
+========================== -->
+
+<section id="research-direction">
+
+  <h2>Research Direction</h2>
+
+  <p>
+    My current research exploration investigates decentralized
+    information discovery and retrieval across nearby participating
+    computing devices.
+  </p>
+
+  <p>
+    The broader question is whether distributed and peer-to-peer
+    computing architectures can provide useful information services
+    without depending entirely on conventional centralized Internet
+    infrastructure, while maintaining appropriate privacy and security.
+  </p>
+
+  <p>
+    This work is currently at an early research and prototype stage.
+    My objective is to progressively develop it through implementation,
+    controlled experiments, quantitative evaluation, analysis, and
+    eventually scholarly communication where the results justify it.
+  </p>
+
+  <p>
+    <a href="research.html">
+      Read more about my research direction →
+    </a>
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     LONG TERM DIRECTION
+========================== -->
+
+<section id="future">
+
+  <h2>Long-Term Direction</h2>
+
+  <p>
+    My long-term academic objective is to pursue advanced study and
+    research in Computer Science while developing deeper expertise in
+    areas connecting distributed computing, computer networks,
+    cybersecurity, information retrieval, artificial intelligence,
+    and decentralized systems.
+  </p>
+
+  <p>
+    Alongside formal study, I intend to continue building practical
+    systems, conducting experiments, documenting results, contributing
+    open technical work, and developing research suitable for
+    scholarly publication.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     PROFILES
+========================== -->
+
+<section id="profiles">
+
+  <h2>Academic & Technical Profiles</h2>
+
+  <p>
+    My research outputs, technical projects, and continuing work can
+    also be followed through the profiles below.
+  </p>
+
+
+  <div class="profile-links">
+
+
+    <a
+      class="profile-button"
+      href="https://scholar.google.com/citations?hl=en&user=Q9m4CH0AAAAJ"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      Google Scholar
+
+    </a>
+
+
+    <a
+      class="profile-button"
+      href="https://orcid.org/0009-0005-6980-1310"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      ORCID
+
+    </a>
+
+
+    <a
+      class="profile-button"
+      href="https://github.com/akshayijalkar/"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      GitHub
+
+    </a>
+
+
+    <a
+      class="profile-button"
+      href="projects.html">
+
+      Projects
+
+    </a>
+
+
+    <a
+      class="profile-button"
+      href="publications.html">
+
+      Publications
+
+    </a>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+  <p>
+    © 2026 Akshay R. Ijalkar
+  </p>
+
+</footer>
+
+
+</body>
 
 </html>
+```
