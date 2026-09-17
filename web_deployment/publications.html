@@ -1,17 +1,546 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <body>
-    <header>
-        <nav>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Publications | Akshay R. Ijalkar</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+    }
+
+    header h1 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .tagline {
+      margin-top: 8px;
+      color: #d1d5db;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================
+       MAIN CONTENT
+    ========================== */
+
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+
+    .intro {
+      color: #4b5563;
+    }
+
+
+    /* =========================
+       PROFILE BUTTONS
+    ========================== */
+
+    .academic-profiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .profile-button {
+      display: inline-block;
+      padding: 10px 16px;
+      background: #111827;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .profile-button:hover {
+      opacity: 0.85;
+    }
+
+
+    /* =========================
+       PUBLICATIONS
+    ========================== */
+
+    #publication-list {
+      margin-top: 20px;
+    }
+
+    .publication {
+      padding: 20px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .publication:last-child {
+      border-bottom: none;
+    }
+
+    .publication-title {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .publication-title a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    .publication-title a:hover {
+      text-decoration: underline;
+    }
+
+    .publication-meta {
+      margin: 4px 0;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    .publication-type {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 3px 8px;
+      background: #f3f4f6;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #4b5563;
+    }
+
+
+    /* =========================
+       LOADING
+    ========================== */
+
+    #loading {
+      color: #6b7280;
+    }
+
+    #publication-error {
+      display: none;
+      padding: 15px;
+      background: #f9fafb;
+      border-left: 4px solid #111827;
+      color: #4b5563;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #111827;
+      color: white;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+      }
+
+      section {
+        padding: 22px;
+      }
+
+      .academic-profiles {
+        flex-direction: column;
+      }
+
+      .profile-button {
+        text-align: center;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header>
+
+  <h1>
+    <a href="../index.html">
+      Akshay R. Ijalkar
+    </a>
+  </h1>
+
+  <p class="tagline">
+    Computer Science • Networks • Distributed Systems • Security • AI
+  </p>
+
+
+  <nav>
     <a href="../index.html">Home</a>
     <a href="research.html">Research</a>
     <a href="projects.html">Projects</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-  </body>
-</head>
-  
+  </nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     PUBLICATIONS INTRO
+========================== -->
+
+<section>
+
+  <h2>Publications & Research Outputs</h2>
+
+  <p class="intro">
+    This page presents my scholarly publications and research outputs.
+    Publication information is synchronized with my public academic
+    research profiles where available.
+  </p>
+
+
+  <div class="academic-profiles">
+
+    <a
+      class="profile-button"
+      href="https://scholar.google.com/citations?hl=en&user=Q9m4CH0AAAAJ"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      Google Scholar
+
+    </a>
+
+
+    <a
+      class="profile-button"
+      href="https://orcid.org/0009-0005-6980-1310"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      ORCID
+
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     AUTOMATIC PUBLICATIONS
+========================== -->
+
+<section>
+
+  <h2>Research Outputs</h2>
+
+  <p id="loading">
+    Loading publications...
+  </p>
+
+  <div id="publication-error">
+
+    Publication information could not be loaded automatically.
+    Please visit my Google Scholar or ORCID profile for the latest
+    research outputs.
+
+  </div>
+
+  <div id="publication-list"></div>
+
+</section>
+
+
+
+<!-- =========================
+     RESEARCH STATUS
+========================== -->
+
+<section>
+
+  <h2>Research in Progress</h2>
+
+  <p>
+    Current research and experimental work is documented separately
+    from formally published scholarly outputs.
+  </p>
+
+  <p>
+    Visit the
+    <a href="research.html">Research</a>
+    page for ongoing research directions, questions, and experiments,
+    or the
+    <a href="projects.html">Projects</a>
+    page for technical implementations.
+  </p>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+  <p>
+    © 2026 Akshay R. Ijalkar
+  </p>
+
+</footer>
+
+
+
+<!-- =========================
+     PUBLICATION LOADER
+========================== -->
+
+<script>
+
+async function loadPublications() {
+
+  const loading =
+    document.getElementById("loading");
+
+  const errorBox =
+    document.getElementById("publication-error");
+
+  const publicationList =
+    document.getElementById("publication-list");
+
+
+  try {
+
+    const response = await fetch(
+      "https://akshay-portfolio-ai.vercel.app/api/publications"
+    );
+
+
+    if (!response.ok) {
+      throw new Error("Unable to retrieve publications.");
+    }
+
+
+    const publications = await response.json();
+
+
+    loading.style.display = "none";
+
+
+    if (!publications.length) {
+
+      publicationList.innerHTML =
+        "<p>No publications are currently listed.</p>";
+
+      return;
+
+    }
+
+
+    publications.forEach(publication => {
+
+      const article =
+        document.createElement("article");
+
+      article.className = "publication";
+
+
+      const title =
+        document.createElement("p");
+
+      title.className = "publication-title";
+
+
+      if (publication.url) {
+
+        const link =
+          document.createElement("a");
+
+        link.href = publication.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+
+        link.textContent =
+          publication.title;
+
+        title.appendChild(link);
+
+      }
+
+      else {
+
+        title.textContent =
+          publication.title;
+
+      }
+
+
+      article.appendChild(title);
+
+
+      if (publication.year) {
+
+        const year =
+          document.createElement("p");
+
+        year.className =
+          "publication-meta";
+
+        year.textContent =
+          "Year: " + publication.year;
+
+        article.appendChild(year);
+
+      }
+
+
+      if (publication.journal) {
+
+        const journal =
+          document.createElement("p");
+
+        journal.className =
+          "publication-meta";
+
+        journal.textContent =
+          publication.journal;
+
+        article.appendChild(journal);
+
+      }
+
+
+      if (publication.type) {
+
+        const type =
+          document.createElement("span");
+
+        type.className =
+          "publication-type";
+
+        type.textContent =
+          publication.type;
+
+        article.appendChild(type);
+
+      }
+
+
+      publicationList.appendChild(article);
+
+    });
+
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+    loading.style.display =
+      "none";
+
+    errorBox.style.display =
+      "block";
+
+  }
+
+}
+
+
+loadPublications();
+
+</script>
+
+
+</body>
+
 </html>
+```
