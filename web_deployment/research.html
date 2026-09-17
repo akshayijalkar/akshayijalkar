@@ -1,17 +1,938 @@
-<!DOCTYPE>
+```html
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <body>
-    <header>
-        <nav>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Research | Akshay R. Ijalkar</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+    }
+
+    header h1 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .tagline {
+      color: #d1d5db;
+      margin-top: 8px;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================
+       MAIN CONTENT
+    ========================== */
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      color: #111827;
+    }
+
+    p a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+
+    .intro {
+      color: #4b5563;
+      font-size: 17px;
+    }
+
+
+    /* =========================
+       RESEARCH AREAS
+    ========================== */
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .research-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .research-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .research-card h3 a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .research-card h3 a:hover {
+      color: #3366cc;
+      text-decoration: underline;
+    }
+
+    .research-card p {
+      color: #4b5563;
+      margin-bottom: 0;
+    }
+
+
+    /* =========================
+       ACTIVE PROJECT
+    ========================== */
+
+    .project-status {
+      display: inline-block;
+      background: #f3f4f6;
+      color: #374151;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .research-question {
+      background: #f9fafb;
+      border-left: 4px solid #111827;
+      padding: 18px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+
+    /* =========================
+       RESEARCH QUESTIONS
+    ========================== */
+
+    .question {
+      padding: 15px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .question:last-child {
+      border-bottom: none;
+    }
+
+
+    /* =========================
+       METHODS
+    ========================== */
+
+    .method-step {
+      margin-bottom: 18px;
+    }
+
+    .method-step strong {
+      color: #111827;
+    }
+
+
+    /* =========================
+       METRICS
+    ========================== */
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .metric {
+      background: #f3f4f6;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+
+    /* =========================
+       RESEARCH LINKS
+    ========================== */
+
+    .research-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .research-button {
+      display: inline-block;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .research-button:hover {
+      opacity: 0.85;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 700px) {
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+      }
+
+      section {
+        padding: 22px;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-links {
+        flex-direction: column;
+      }
+
+      .research-button {
+        text-align: center;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header>
+
+  <h1>
+    <a href="../index.html">
+      Akshay R. Ijalkar
+    </a>
+  </h1>
+
+  <p class="tagline">
+    Computer Science • Networks • Distributed Systems • Security • AI
+  </p>
+
+
+  <nav>
     <a href="../index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="publications.html">Publications</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-  </body>
-</head>
+  </nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     RESEARCH OVERVIEW
+========================== -->
+
+<section id="overview">
+
+  <h2>Research</h2>
+
+  <p class="intro">
+    My current research exploration focuses on networked,
+    distributed, secure, and intelligent computing systems,
+    particularly systems capable of operating when conventional
+    Internet infrastructure is limited, unreliable, or unavailable.
+  </p>
+
+  <p>
+    I am interested in understanding how
+
+    <a href="https://en.wikipedia.org/wiki/Distributed_computing"
+       target="_blank"
+       rel="noopener noreferrer">
+      distributed computing
+    </a>,
+
+    <a href="https://en.wikipedia.org/wiki/Peer-to-peer"
+       target="_blank"
+       rel="noopener noreferrer">
+      peer-to-peer networking
+    </a>,
+
+    <a href="https://en.wikipedia.org/wiki/Information_retrieval"
+       target="_blank"
+       rel="noopener noreferrer">
+      information retrieval
+    </a>,
+
+    <a href="https://en.wikipedia.org/wiki/Computer_security"
+       target="_blank"
+       rel="noopener noreferrer">
+      security
+    </a>
+
+    and
+
+    <a href="https://en.wikipedia.org/wiki/Artificial_intelligence"
+       target="_blank"
+       rel="noopener noreferrer">
+      artificial intelligence
+    </a>
+
+    can be combined to develop practical computing systems that
+    discover, exchange, process, and retrieve information across
+    distributed environments.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     RESEARCH AREAS
+========================== -->
+
+<section id="research-areas">
+
+  <h2>Research Areas</h2>
+
+  <div class="research-grid">
+
+
+    <div class="research-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Computer_network"
+           target="_blank"
+           rel="noopener noreferrer">
+          Computer Networks
+        </a>
+      </h3>
+
+      <p>
+        Communication between computing devices, network protocols,
+        local-area communication, peer discovery, and information
+        exchange across connected systems.
+      </p>
+
+    </div>
+
+
+    <div class="research-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Distributed_computing"
+           target="_blank"
+           rel="noopener noreferrer">
+          Distributed Systems
+        </a>
+      </h3>
+
+      <p>
+        Coordination, communication, resource sharing, availability,
+        and information processing across multiple independent
+        computing nodes.
+      </p>
+
+    </div>
+
+
+    <div class="research-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Peer-to-peer"
+           target="_blank"
+           rel="noopener noreferrer">
+          Peer-to-Peer Systems
+        </a>
+      </h3>
+
+      <p>
+        Decentralized architectures in which participating devices
+        communicate and exchange resources directly without depending
+        entirely on centralized infrastructure.
+      </p>
+
+    </div>
+
+
+    <div class="research-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Information_retrieval"
+           target="_blank"
+           rel="noopener noreferrer">
+          Information Retrieval
+        </a>
+      </h3>
+
+      <p>
+        Discovering, searching, ranking, and retrieving relevant
+        information from local and distributed information sources.
+      </p>
+
+    </div>
+
+
+    <div class="research-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Computer_security"
+           target="_blank"
+           rel="noopener noreferrer">
+          Security & Privacy
+        </a>
+      </h3>
+
+      <p>
+        Exploring mechanisms that allow useful information exchange
+        while minimizing unnecessary disclosure of private or
+        sensitive information.
+      </p>
+
+    </div>
+
+
+    <div class="research-card">
+
+      <h3>
+        <a href="https://en.wikipedia.org/wiki/Artificial_intelligence"
+           target="_blank"
+           rel="noopener noreferrer">
+          AI & Intelligent Systems
+        </a>
+      </h3>
+
+      <p>
+        Exploring intelligent information retrieval, AI-assisted
+        applications, local intelligence, and the potential role of
+        AI within distributed computing environments.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ACTIVE RESEARCH
+========================== -->
+
+<section id="active-research">
+
+  <h2>Current Research Exploration</h2>
+
+  <span class="project-status">
+    Early Research & Prototype Development
+  </span>
+
+
+  <h3>
+    Privacy-Preserving Decentralized Information Retrieval
+    over Opportunistic Peer-to-Peer Networks
+  </h3>
+
+
+  <p>
+    This research direction explores whether nearby participating
+    computing devices can collaboratively discover and retrieve useful
+    information without depending entirely on conventional Internet
+    infrastructure or a centralized search service.
+  </p>
+
+
+  <div class="research-question">
+
+    Can nearby devices collaboratively discover and retrieve useful
+    information without depending on conventional Internet
+    infrastructure, while minimizing disclosure of users' private
+    information?
+
+  </div>
+
+
+  <p>
+    The initial system concept consists of multiple devices connected
+    through a local network. Each participating node maintains a local
+    index of deliberately shared information. A query originating from
+    one device can be propagated to available peers, processed against
+    their local indexes, and returned to the originating device for
+    aggregation and ranking.
+  </p>
+
+
+  <p>
+    Early prototypes will use public or deliberately shared test
+    documents rather than private browser histories or personal
+    information. Privacy-preserving mechanisms can then be introduced
+    and evaluated as the research develops.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     CONCEPTUAL ARCHITECTURE
+========================== -->
+
+<section id="architecture">
+
+  <h2>Conceptual Architecture</h2>
+
+  <p>
+    The initial experimental architecture follows a decentralized
+    query-and-retrieval model:
+  </p>
+
+  <div class="research-question">
+
+    User Query → Local Peer Discovery → Distributed Search →
+    Local Retrieval → Result Aggregation → Ranking → User
+
+  </div>
+
+  <p>
+    Each participating node is expected to provide a small set of
+    capabilities including peer discovery, local indexing, query
+    processing, result generation, and communication with other
+    participating nodes.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     INITIAL METHODOLOGY
+========================== -->
+
+<section id="methodology">
+
+  <h2>Initial Research Methodology</h2>
+
+
+  <div class="method-step">
+
+    <strong>1. Local Information Collection</strong>
+
+    <p>
+      Construct controlled collections of public or deliberately
+      shared documents across multiple experimental nodes.
+    </p>
+
+  </div>
+
+
+  <div class="method-step">
+
+    <strong>2. Local Indexing</strong>
+
+    <p>
+      Each node independently creates a searchable representation of
+      its locally available information.
+    </p>
+
+  </div>
+
+
+  <div class="method-step">
+
+    <strong>3. Peer Discovery</strong>
+
+    <p>
+      Investigate mechanisms through which participating devices can
+      discover available peers on a local network.
+    </p>
+
+  </div>
+
+
+  <div class="method-step">
+
+    <strong>4. Distributed Query Processing</strong>
+
+    <p>
+      Propagate information requests to available nodes and perform
+      retrieval against their local indexes.
+    </p>
+
+  </div>
+
+
+  <div class="method-step">
+
+    <strong>5. Result Aggregation & Ranking</strong>
+
+    <p>
+      Combine results returned by participating nodes and investigate
+      methods for ranking information according to relevance.
+    </p>
+
+  </div>
+
+
+  <div class="method-step">
+
+    <strong>6. Experimental Evaluation</strong>
+
+    <p>
+      Evaluate the prototype under different numbers of nodes,
+      information distributions, network conditions, and peer
+      availability scenarios.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     EVALUATION
+========================== -->
+
+<section id="evaluation">
+
+  <h2>Planned Evaluation</h2>
+
+  <p>
+    As the prototype develops, experiments may investigate several
+    system and information-retrieval characteristics.
+  </p>
+
+
+  <div class="metric-grid">
+
+    <div class="metric">
+      Query Latency
+    </div>
+
+    <div class="metric">
+      Retrieval Quality
+    </div>
+
+    <div class="metric">
+      Network Traffic
+    </div>
+
+    <div class="metric">
+      Peer Discovery Overhead
+    </div>
+
+    <div class="metric">
+      Scalability
+    </div>
+
+    <div class="metric">
+      Peer Availability
+    </div>
+
+    <div class="metric">
+      Precision & Recall
+    </div>
+
+    <div class="metric">
+      Privacy Exposure
+    </div>
+
+    <div class="metric">
+      Fault Tolerance
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     RESEARCH QUESTIONS
+========================== -->
+
+<section id="questions">
+
+  <h2>Questions I Am Exploring</h2>
+
+
+  <div class="question">
+
+    How can nearby computing devices discover useful information
+    without depending entirely on centralized Internet services?
+
+  </div>
+
+
+  <div class="question">
+
+    How should queries be distributed efficiently when the number and
+    availability of participating peers continuously changes?
+
+  </div>
+
+
+  <div class="question">
+
+    How can results returned from independent devices be ranked and
+    combined effectively?
+
+  </div>
+
+
+  <div class="question">
+
+    What information should a participating device reveal to other
+    peers, and what information should remain private?
+
+  </div>
+
+
+  <div class="question">
+
+    How does decentralized retrieval compare with centralized
+    information retrieval in latency, network overhead, availability,
+    and retrieval quality?
+
+  </div>
+
+
+  <div class="question">
+
+    Can artificial intelligence improve peer selection, information
+    ranking, query routing, or retrieval quality in decentralized
+    information systems?
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     FUTURE DIRECTIONS
+========================== -->
+
+<section id="future">
+
+  <h2>Future Research Directions</h2>
+
+  <p>
+    As the initial system and experimental methodology mature, future
+    exploration may extend toward:
+  </p>
+
+  <ul>
+
+    <li>
+      Privacy-preserving distributed information retrieval
+    </li>
+
+    <li>
+      Intelligent peer and resource discovery
+    </li>
+
+    <li>
+      AI-assisted distributed search and ranking
+    </li>
+
+    <li>
+      Edge-based information processing
+    </li>
+
+    <li>
+      Opportunistic and intermittently connected networks
+    </li>
+
+    <li>
+      Decentralized knowledge discovery
+    </li>
+
+    <li>
+      Secure peer-to-peer communication
+    </li>
+
+    <li>
+      Resilient communication in infrastructure-limited environments
+    </li>
+
+  </ul>
+
+</section>
+
+
+
+<!-- =========================
+     RESEARCH OUTPUTS
+========================== -->
+
+<section id="outputs">
+
+  <h2>Research Outputs</h2>
+
+  <p>
+    Formal publications will be listed separately as research work
+    progresses through experimentation, analysis, peer review, and
+    publication.
+  </p>
+
+
+  <div class="research-links">
+
+    <a class="research-button"
+       href="publications.html">
+      Publications
+    </a>
+
+
+    <a class="research-button"
+       href="projects.html">
+      Research Projects
+    </a>
+
+
+    <a class="research-button"
+       href="https://scholar.google.com/citations?hl=en&user=Q9m4CH0AAAAJ"
+       target="_blank"
+       rel="noopener noreferrer">
+      Google Scholar
+    </a>
+
+
+    <a class="research-button"
+       href="https://orcid.org/0009-0005-6980-1310"
+       target="_blank"
+       rel="noopener noreferrer">
+      ORCID
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+  <p>
+    © 2026 Akshay R. Ijalkar
+  </p>
+
+</footer>
+
+
+</body>
 
 </html>
+```
+
