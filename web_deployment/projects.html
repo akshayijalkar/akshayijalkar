@@ -1,18 +1,771 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-  <body>
-    <header>
-        <nav>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Projects | Akshay R. Ijalkar</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+    }
+
+    header h1 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .tagline {
+      color: #d1d5db;
+      margin-top: 8px;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+
+    .intro {
+      color: #4b5563;
+      font-size: 17px;
+    }
+
+    p a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       PROJECT CARDS
+    ========================== */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .project-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 22px;
+      background: #f9fafb;
+    }
+
+    .project-card h3 {
+      margin-top: 8px;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .project-card p {
+      color: #4b5563;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 5px;
+      background: #e5e7eb;
+      color: #374151;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       TECHNOLOGIES
+    ========================== */
+
+    .technologies {
+      margin-top: 15px;
+    }
+
+    .technology {
+      display: inline-block;
+      background: white;
+      border: 1px solid #d1d5db;
+      padding: 3px 8px;
+      margin: 3px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #4b5563;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .project-links {
+      margin-top: 18px;
+    }
+
+    .project-button {
+      display: inline-block;
+      padding: 8px 13px;
+      margin-right: 7px;
+      margin-bottom: 6px;
+      background: #111827;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .project-button:hover {
+      opacity: 0.85;
+    }
+
+    /* =========================
+       TOOLKIT
+    ========================== */
+
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .tool {
+      background: #f3f4f6;
+      padding: 12px;
+      text-align: center;
+      border-radius: 6px;
+    }
+
+    /* =========================
+       GITHUB
+    ========================== */
+
+    .github-box {
+      text-align: center;
+    }
+
+    .github-button {
+      display: inline-block;
+      margin-top: 12px;
+      background: #111827;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .github-button:hover {
+      opacity: 0.85;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 700px) {
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+      }
+
+      section {
+        padding: 22px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .toolkit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header>
+
+  <h1>
+    <a href="../index.html">
+      Akshay R. Ijalkar
+    </a>
+  </h1>
+
+  <p class="tagline">
+    Computer Science • Networks • Distributed Systems • Security • AI
+  </p>
+
+  <nav>
     <a href="../index.html">Home</a>
     <a href="research.html">Research</a>
     <a href="publications.html">Publications</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-  </body>
-</head>
-  
+  </nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     PROJECT OVERVIEW
+========================== -->
+
+<section>
+
+  <h2>Projects</h2>
+
+  <p class="intro">
+    This page documents my research prototypes, software projects,
+    infrastructure experiments, automation work, and technical
+    implementations developed while exploring Computer Science,
+    distributed systems, networking, security, artificial intelligence,
+    and research computing.
+  </p>
+
+  <p>
+    Projects presented here range from active research prototypes to
+    practical systems created while studying and experimenting with
+    different computing technologies.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     ACTIVE RESEARCH PROJECT
+========================== -->
+
+<section>
+
+  <h2>Active Research Project</h2>
+
+  <div class="project-card">
+
+    <span class="status">
+      Research Prototype — In Development
+    </span>
+
+    <h3>
+      Privacy-Preserving Decentralized Information Retrieval
+    </h3>
+
+    <p>
+      An experimental decentralized information retrieval system
+      exploring whether nearby participating devices can collaboratively
+      discover and retrieve useful information without depending
+      entirely on conventional Internet infrastructure or a centralized
+      search service.
+    </p>
+
+    <p>
+      The initial prototype is being designed around local peer
+      discovery, distributed queries, local document indexing,
+      information retrieval, result aggregation, and ranking.
+    </p>
+
+    <div class="technologies">
+
+      <span class="technology">Python</span>
+      <span class="technology">Computer Networks</span>
+      <span class="technology">Distributed Systems</span>
+      <span class="technology">P2P</span>
+      <span class="technology">Information Retrieval</span>
+      <span class="technology">Security</span>
+
+    </div>
+
+    <div class="project-links">
+
+      <a class="project-button"
+         href="research.html">
+        Research Details
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     SOFTWARE & WEB PROJECTS
+========================== -->
+
+<section>
+
+  <h2>Software & Web Projects</h2>
+
+  <div class="projects-grid">
+
+
+    <!-- PORTFOLIO -->
+
+    <div class="project-card">
+
+      <span class="status">
+        Active
+      </span>
+
+      <h3>
+        Academic & Research Portfolio
+      </h3>
+
+      <p>
+        A personal academic website developed to document my research
+        interests, technical projects, academic development,
+        publications, experiments, and professional research profiles.
+      </p>
+
+      <p>
+        The website is built using standard web technologies and
+        deployed through GitHub Pages.
+      </p>
+
+      <div class="technologies">
+
+        <span class="technology">HTML</span>
+        <span class="technology">CSS</span>
+        <span class="technology">JavaScript</span>
+        <span class="technology">Git</span>
+        <span class="technology">GitHub Pages</span>
+
+      </div>
+
+    </div>
+
+
+    <!-- AI PORTFOLIO ASSISTANT -->
+
+    <div class="project-card">
+
+      <span class="status">
+        Active
+      </span>
+
+      <h3>
+        AI Portfolio Assistant
+      </h3>
+
+      <p>
+        An AI-powered assistant integrated into this portfolio to help
+        visitors ask questions about my research interests, projects,
+        technical work, and academic development.
+      </p>
+
+      <p>
+        The frontend communicates with a serverless backend so that AI
+        API credentials remain outside the publicly accessible website
+        source code.
+      </p>
+
+      <div class="technologies">
+
+        <span class="technology">JavaScript</span>
+        <span class="technology">REST API</span>
+        <span class="technology">Gemini</span>
+        <span class="technology">Vercel</span>
+        <span class="technology">Serverless</span>
+
+      </div>
+
+    </div>
+
+
+    <!-- PUBLICATION SYSTEM -->
+
+    <div class="project-card">
+
+      <span class="status">
+        Active
+      </span>
+
+      <h3>
+        Automated Research Publication Integration
+      </h3>
+
+      <p>
+        A lightweight publication integration system that retrieves
+        public research outputs from my ORCID record through a
+        serverless API and automatically presents available scholarly
+        outputs on the portfolio.
+      </p>
+
+      <div class="technologies">
+
+        <span class="technology">ORCID</span>
+        <span class="technology">REST API</span>
+        <span class="technology">JavaScript</span>
+        <span class="technology">Vercel</span>
+
+      </div>
+
+      <div class="project-links">
+
+        <a class="project-button"
+           href="publications.html">
+          Publications
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- GOOGLE FORMS AUTOMATION -->
+
+    <div class="project-card">
+
+      <span class="status">
+        Technical Automation
+      </span>
+
+      <h3>
+        Multi-Form Data Integration Automation
+      </h3>
+
+      <p>
+        An automation workflow designed to combine responses from
+        multiple Google Forms into a common master dataset using a
+        shared identifier while allowing later responses to update
+        previously incomplete records.
+      </p>
+
+      <div class="technologies">
+
+        <span class="technology">Google Forms</span>
+        <span class="technology">Google Sheets</span>
+        <span class="technology">Apps Script</span>
+        <span class="technology">Automation</span>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     SYSTEMS & INFRASTRUCTURE
+========================== -->
+
+<section>
+
+  <h2>Systems & Infrastructure Work</h2>
+
+  <div class="projects-grid">
+
+
+    <div class="project-card">
+
+      <h3>
+        Linux & Server Environment Exploration
+      </h3>
+
+      <p>
+        Hands-on exploration of Linux system administration,
+        networking tools, storage management, shell environments,
+        command-line workflows, and server configuration.
+      </p>
+
+      <div class="technologies">
+
+        <span class="technology">Linux</span>
+        <span class="technology">Ubuntu</span>
+        <span class="technology">Bash</span>
+        <span class="technology">Networking</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="project-card">
+
+      <h3>
+        Server Storage & RAID Configuration
+      </h3>
+
+      <p>
+        Practical exploration of enterprise storage involving
+        SAS/SATA drives, hot-swappable storage bays, virtual disks,
+        RAID controllers, disk migration, operating-system storage
+        visibility, and data-management workflows.
+      </p>
+
+      <div class="technologies">
+
+        <span class="technology">SAS</span>
+        <span class="technology">SATA</span>
+        <span class="technology">RAID</span>
+        <span class="technology">PERC</span>
+        <span class="technology">Windows</span>
+        <span class="technology">Linux</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="project-card">
+
+      <h3>
+        Bash Automation & System Utilities
+      </h3>
+
+      <p>
+        Development and experimentation with shell scripts for file
+        management, scheduled operations, system inspection,
+        networking, and administrative workflows.
+      </p>
+
+      <div class="technologies">
+
+        <span class="technology">Bash</span>
+        <span class="technology">Linux</span>
+        <span class="technology">Automation</span>
+        <span class="technology">WSL</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="project-card">
+
+      <h3>
+        Research Computing Infrastructure Planning
+      </h3>
+
+      <p>
+        Exploration of compute and storage requirements for
+        high-throughput research workloads, including batch-oriented
+        whole-genome and exome sequencing data-processing scenarios.
+      </p>
+
+      <div class="technologies">
+
+        <span class="technology">HPC</span>
+        <span class="technology">Storage</span>
+        <span class="technology">WGS</span>
+        <span class="technology">WES</span>
+        <span class="technology">Batch Processing</span>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CURRENT TECHNICAL TOOLKIT
+========================== -->
+
+<section>
+
+  <h2>Technologies Used Across Projects</h2>
+
+  <div class="toolkit-grid">
+
+    <div class="tool">Python</div>
+    <div class="tool">Java</div>
+    <div class="tool">C#</div>
+    <div class="tool">Bash</div>
+
+    <div class="tool">Linux</div>
+    <div class="tool">Windows</div>
+    <div class="tool">Git</div>
+    <div class="tool">GitHub</div>
+
+    <div class="tool">Docker</div>
+    <div class="tool">Kubernetes</div>
+    <div class="tool">Vercel</div>
+    <div class="tool">GitHub Pages</div>
+
+    <div class="tool">HTML</div>
+    <div class="tool">CSS</div>
+    <div class="tool">JavaScript</div>
+    <div class="tool">REST APIs</div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     DEVELOPMENT DIRECTION
+========================== -->
+
+<section>
+
+  <h2>Current Development Direction</h2>
+
+  <p>
+    My upcoming project work is increasingly focused on combining
+    software development with research questions in distributed
+    systems, computer networks, information retrieval, cybersecurity,
+    and artificial intelligence.
+  </p>
+
+  <p>
+    As projects mature, their source code, experimental methodology,
+    datasets where appropriate, results, and related scholarly outputs
+    will be linked from this page.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     GITHUB
+========================== -->
+
+<section class="github-box">
+
+  <h2>Source Code & Development</h2>
+
+  <p>
+    Public source code and technical repositories are available through
+    my GitHub profile. Research repositories will be added as projects
+    become suitable for public release.
+  </p>
+
+  <a
+    class="github-button"
+    href="https://github.com/akshayijalkar/"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    View GitHub Profile
+
+  </a>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  <p>
+    © 2026 Akshay R. Ijalkar
+  </p>
+
+</footer>
+
+
+</body>
+
 </html>
+```
