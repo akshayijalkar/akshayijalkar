@@ -1,0 +1,60 @@
+name: Redesign portfolio pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web_deployment/portfolio-theme.css'
+      - '.github/workflows/redesign-portfolio.yml'
+permissions:
+  contents: write
+jobs:
+  redesign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply modern theme and correct skill positioning
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          pages=['about.html','academic.html','research.html','projects.html','publications.html','contact.html']
+          for name in pages:
+              p=Path('web_deployment')/name
+              s=p.read_text()
+              if 'portfolio-theme.css' not in s:
+                  s=s.replace('</head>','  <link rel="stylesheet" href="portfolio-theme.css">\n</head>')
+              s=s.replace('Computer Science • Networks • Distributed Systems • Security • AI','Computer Science • AI • Machine Learning • Systems • Security')
+              s=s.replace('Computer Networks • Distributed Systems • Security • AI','Computer Science • AI • Machine Learning • Systems • Security')
+              s=s.replace('<span class="tool">Java</span>','')
+              s=s.replace('<span class="tool">C#</span>','')
+              s=s.replace('<span class="topic">Java</span>','')
+              s=s.replace('<span class="topic">C#</span>','')
+              s=s.replace('<div class="tool">Java</div>','')
+              s=s.replace('<div class="tool">C#</div>','')
+              s=s.replace('<span class="technology">P2P</span>','<span class="technology">Research Exploration</span>')
+              s=s.replace('peer-to-peer networking,\n    decentralized systems, distributed information retrieval, edge\n    computing, security, and privacy-preserving architectures.','AI and machine learning, computing systems, networks, security, information retrieval, cloud and edge computing, while also exploring distributed and decentralized architectures as possible research directions.')
+              s=s.replace('My current research exploration investigates decentralized\n    information discovery and retrieval across nearby participating\n    computing devices.','My research direction is currently exploratory. I am building foundational Computer Science, AI and Machine Learning skills while studying potential research problems across intelligent systems, security, networks, information retrieval, cloud/edge computing and distributed systems.')
+              s=s.replace('My current research exploration focuses on decentralized\n    information retrieval over peer-to-peer environments, particularly\n    the possibility of discovering and retrieving information from\n    nearby participating devices when conventional Internet\n    infrastructure is unavailable or limited.','My research development is currently at the foundational and exploratory stage. I am studying AI, Machine Learning, computing systems, security, networks and information retrieval while learning how to identify research gaps, formulate questions, build prototypes and evaluate them experimentally.')
+              if '<body>' in s and 'portfolio-note-inner' not in s:
+                  note='''<div class="portfolio-note"><div class="portfolio-note-inner"><strong>Current stage:</strong> Building foundations since 2025 — developing practical Computer Science, AI/ML, systems and research skills while exploring future research directions.</div></div>'''
+                  s=s.replace('<main>',note+'\n<main>',1)
+              p.write_text(s)
+      - name: Refresh research page positioning
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('web_deployment/research.html'); s=p.read_text()
+          s=s.replace('My current research exploration focuses on networked,\n    distributed, secure, and intelligent computing systems,\n    particularly systems capable of operating when conventional\n    Internet infrastructure is limited, unreliable, or unavailable.','I am currently building the foundations required for research in Computer Science, with particular interest in Artificial Intelligence, Machine Learning, security, information retrieval, computing systems, networks, cloud/edge computing and data-intensive research. I am exploring multiple research directions before committing to a specific research problem.')
+          s=s.replace('Early Research & Prototype Development','Research Exploration — Topic Not Yet Finalized')
+          s=s.replace('Privacy-Preserving Decentralized Information Retrieval\n    over Opportunistic Peer-to-Peer Networks','Exploring Research Problems Across AI, ML & Computing Systems')
+          s=s.replace('This research direction explores whether nearby participating\n    computing devices can collaboratively discover and retrieve useful\n    information without depending entirely on conventional Internet\n    infrastructure or a centralized search service.','Rather than presenting one idea as an established specialization, I am currently reviewing literature, strengthening fundamentals and testing candidate ideas. Areas under exploration include AI/ML systems, intelligent information retrieval, security and privacy, networked systems, cloud/edge computing and resilient computing.')
+          s=s.replace("Can nearby devices collaboratively discover and retrieve useful\n    information without depending on conventional Internet\n    infrastructure, while minimizing disclosure of users' private\n    information?","How can AI, machine learning and modern computing systems be combined to solve useful problems with measurable improvements in intelligence, efficiency, security, privacy or resilience?")
+          p.write_text(s)
+      - name: Commit redesign
+        run: |
+          git config user.name "Akshay R. Ijalkar"
+          git config user.email "167232821+akshayijalkar@users.noreply.github.com"
+          git add web_deployment/*.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Redesign portfolio and align skills with current foundation"
+          git push
