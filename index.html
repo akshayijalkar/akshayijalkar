@@ -53,11 +53,11 @@
        HEADER
     ========================== */
 
-    /* header {
+    header {
       background: #111827;
       color: white;
       padding: 50px 20px;
-      text-align: center;
+      text-align: right;
     }
 
     header h1 {
@@ -65,19 +65,19 @@
       font-size: 40px;
     }
 
-    header h1 a {
+    /* header h1 a {
       color: inherit;
       text-decoration: none;
     }
 
     header h1 a:hover {
       opacity: 0.7;
-    }
+    } */
 
     .tagline {
       color: #d1d5db;
       margin-top: 5px;
-    } */
+    }
 
     /* =========================
        NAVIGATION
@@ -199,6 +199,8 @@
     ========================== */
 
     footer {
+        .copyright {
+            
       text-align: right;
       padding: 10px;
       background: #111827;
@@ -212,6 +214,24 @@
 
     footer a:hover {
       text-decoration: underline;
+        }
+        
+        .footer-links {
+      text-align: left;
+      padding: 10px;
+      background: #111827;
+      color: white;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+        }    
+        }
     }
 
     /* =========================
@@ -1182,6 +1202,7 @@
 ========================== -->
 
 <footer>
+<div class="footer-links">
   <h2>Links to profiles</h2>
 
   <p>
@@ -1248,11 +1269,12 @@
         YouTube
     </a>
   </p>
-
+</div>
+<div class="copyright">
   <p>
     © 2026 Akshay R. Ijalkar
   </p>
-
+</div>
 </footer>
 
 </body>
